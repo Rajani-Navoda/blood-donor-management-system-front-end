@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+  
+  .rectangle {
+    width: 750px;
+    height: 500px;
+    
+   
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border: 6px solid rgb(17, 17, 17);
+  }
+  .rectangle img {
+    max-width: 100%;
+  }
+  
+  .text {
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+  .text p {
+    margin: 0;
+  }
+  .h5{
+    font-size: 20px;
+  }
+  .p1{
+    font-weight: 500;
+    font-size: 20px;
+  }

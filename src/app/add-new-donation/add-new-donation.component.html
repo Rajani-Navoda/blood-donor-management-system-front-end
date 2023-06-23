@@ -1,0 +1,169 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+
+  
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+        
+            <h4 class="fw-bold mb-5">Add a new donation</h4>
+
+            
+            <form>
+  
+              <!-- Date and location-->
+              <div class="row" >
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline" >
+                    <input type="date" id="nicNumber" class="form-control" style="background-color: antiquewhite;" />
+                    <label class="form-label" for="nicNumber">Donation-date</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline" >
+                    <input type="text" id="dateOfBirth" class="form-control" style="background-color: antiquewhite;" />
+                    <label class="form-label" for="dateOfBirth">location</label>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+
+              <h5 class="fw-bold mb-5" style="text-align: left;">Medical assessment</h5>
+
+              <!--barcode and weight-->
+
+              <div class="row" >
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline" >
+                    <input type="text" id="nicNumber" class="form-control" />
+                    <label class="form-label" for="nicNumber">Weight</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="file" id="imageUpload" name="imageUpload" accept="image/*" class="form-control" />
+                          <label class="form-label" for="imageUpload">Bar Code</label>
+                        </div>
+                    </div>
+                 </div>
+             <br><br>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <div style="text-align: justify;">
+                        <!--Donation history-->
+                        <h5 style="text-align: left;">History</h5>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Feeling well?</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Adequate overnight Sleep?(>6 hours)</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Last meal(>4 hours)</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Ever hospitalized?</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Any allergies, illnesses or medications?</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">High rish behaviours?</label>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <div style="text-align: justify;">
+                         <!--examination history-->
+                         <h5 style="text-align: left;">Examination III</h5>
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Looking for pallor?</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">lcterus</label>
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Alcohol smell/infacted wounds/Venepuncture site lesions</label>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Blood pressure-->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine1" class="form-control" />
+                    <label class="form-label" for="addressLine1">CVS status pulse</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine2" class="form-control" />
+                    <label class="form-label" for="addressLine2">Blood pressure</label>
+                  </div>
+                </div>
+              </div>
+
+             
+  
+              <!-- City and zip -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="city" class="form-control" />
+                    <label class="form-label" for="city">Hb level</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="zip" class="form-control" />
+                    <label class="form-label" for="zip">Blood bag type</label>
+                  </div>
+                </div>
+              </div>
+ 
+              <!-- Submit button -->
+              
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <!-- Previous button -->
+                    <button class="btn btn-secondary" >Delete </button>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <!-- Display current page number -->
+                  
+                  </div>
+                  <div class="col-md-4 text-right">
+                    <!-- Next button -->
+                    <button class="btn btn-primary"  style="width: 250px;">submit</button>
+                  </div>
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+ 
+  </section>
+  <!-- Section: Design Block -->

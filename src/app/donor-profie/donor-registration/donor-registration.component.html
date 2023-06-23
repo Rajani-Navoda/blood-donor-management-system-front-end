@@ -1,0 +1,205 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+      background-image: url('../assets/images/front-view-woman-holding-paper-heart-with-heartbeat.jpg');
+      height: 300px;
+      width: auto;
+      background-repeat: no-repeat;
+      background-size: cover;
+    "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+      margin-top: -100px;
+      background: hsla(0, 0%, 100%, 0.8);
+      backdrop-filter: blur(30px);
+    ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Donor Registration Form</h2>
+            <h4 class="fw-bold mb-5">personal information</h4>
+
+            
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control" />
+                    <label class="form-label" for="firstName">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control" />
+                    <label class="form-label" for="lastName">Last name</label>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Full name -->
+              <div class="form-outline">
+                <input type="text" id="fullName" class="form-control" />
+                <label class="form-label" for="fullName">Full name (According to the NIC)</label>
+              </div><br>
+  
+              <!-- NIC and date of birth -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="nicNumber" class="form-control" />
+                    <label class="form-label" for="nicNumber">NIC number</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="date" id="dateOfBirth" class="form-control" />
+                    <label class="form-label" for="dateOfBirth">Date of birth</label>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Gender -->
+              <div class="col-md-6">
+                <label class="form-label">Gender :  </label>
+                <div class="form-check form-check-inline mb-4">
+                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male">
+                  <label class="form-check-label" for="maleRadio">Male</label>
+                </div>
+  
+                <div class="form-check form-check-inline mb-4">
+                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female">
+                  <label class="form-check-label" for="femaleRadio">Female</label>
+                </div>
+  
+                <div class="form-check form-check-inline mb-4">
+                  <input class="form-check-input" type="radio" name="gender" id="unknownRadio" value="unknown">
+                  <label class="form-check-label" for="unknownRadio">Unknown</label>
+                </div>
+              </div>
+              <br>
+  
+              <!-- Address -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine1" class="form-control" />
+                    <label class="form-label" for="addressLine1">Address Line 1</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine2" class="form-control" />
+                    <label class="form-label" for="addressLine2">Address Line 2</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine1" class="form-control" />
+                    <label class="form-label" for="addressLine1">Address Line 3</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="addressLine2" class="form-control" />
+                    <label class="form-label" for="addressLine2">Address Line 4</label>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- City and zip -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="city" class="form-control" />
+                    <label class="form-label" for="city">City</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="zip" class="form-control" />
+                    <label class="form-label" for="zip">Zip/Postal code</label>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="email" class="form-control" />
+                <label class="form-label" for="email">Email address</label>
+              </div>
+
+           
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-outline-info" onclick="verifyEmail()" style="width: 500px;">Verify your Email Address</button>
+                </div><br><br>
+       
+              
+
+              <!-- contact number-->
+              <div class="row">
+                
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="tel" id="city" class="form-control" />
+                    <label class="form-label" for="city">Contact no: Mobile</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="tel" id="zip" class="form-control" />
+                    <label class="form-label" for="zip">Contact no: Home</label>
+                  </div>
+                </div>
+               
+              </div>
+
+              <div class="col-md-12">
+                <button type="button" class="btn btn-outline-info" onclick="verifyContactNumber()" style="width: 500px;">Verify your Contact Number</button>
+              </div> <br><br>
+
+             <!--Upload the photo-->
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                 
+                  <input type="file" id="imageUpload" name="imageUpload" accept="image/*" class="form-control" />
+                  <label class="form-label" for="imageUpload">Upload your photo</label>
+                </div>
+                </div>
+          
+              
+             
+
+              <!-- Submit button -->
+              
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <!-- Previous button -->
+                    <button class="btn btn-secondary" >Previous</button>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <!-- Display current page number -->
+                  
+                  </div>
+                  <div class="col-md-4 text-right">
+                    <!-- Next button -->
+                    <button class="btn btn-primary"  style="width: 250px;" routerLink="../donor-registration2" >Next</button>
+                  </div>
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->

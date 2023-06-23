@@ -1,0 +1,83 @@
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <div class="card mb-3">
+      <div class="row g-0 d-flex align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex" style="width: 50%; height: 100%;">
+            <img src="../assets/images/e6a9067718a195c60a14e922b34b8e59.jpg" alt="side image" class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5 image-half-frame">
+        </div>
+        <div class="col-lg-8" style="width: 50%; height: 50%;">
+          
+          <div class="card-body py-5 px-md-5">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="../../assets/images/34337-heart-beat.gif" alt="logo">
+              <h2 class="fw-bold mb-5">Sign in</h2>
+            </div>
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active" routerLink="../donorProfile">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Donor
+              </label>
+              <label class="btn btn-secondary" routerLink="../organizerprofile-header">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Campaign organizer
+              </label>
+              <label class="btn btn-secondary" routerLink="../bloodbankprofile-header">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Blood bank
+              </label>
+              <label class="btn btn-secondary" routerLink="../admin-dashboard">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Admin
+              </label>
+            </div>
+            <br><br>
+
+            <form class="text-center">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Email address</label>
+              </div>
+            
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
+              </div>
+            
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                    <label class="form-check-label" for="form2Example31">Remember me</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                  
+                </div>
+                <div class="col">
+                  <a routerLink="../Signup">Don't have an accout?</a> 
+                </div>
+               
+              </div>
+            
+              <!-- Submit button -->
+              <a routerLink="../donorprofile">
+                <button type="button" class="btn btn-primary btn-block mb-4" style="width: 100%;">Sign in</button>
+              </a>
+              
+            </form>
+            <a routerLink="">
+              <button type="button" class="btn btn-outline-secondary" style="width: 100%;">Go to homepage</button>
+            </a>
+            
+      
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  

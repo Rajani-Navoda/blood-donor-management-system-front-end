@@ -1,0 +1,188 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div
+            class="card cascading-right"
+            style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+            "
+          >
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Sign up now</h2>
+              <form >
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1"
+                        >First name</label
+                      >
+                      <input
+                        type="text"
+                        formControlName="firstName"
+                        id="form3Example1"
+                        class="form-control"
+                        required
+                      />
+                      <div>
+                          <div class="text-danger">
+                            First name is required.
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example2"
+                        >Last name</label
+                      >
+                      <input
+                        type="text"
+                        formControlName="lastName"
+                        id="form3Example2"
+                        class="form-control"
+                        required
+                      />
+                      <div>
+                          <div class="text-danger">
+                            Last name is required.
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    formControlName="email"
+                    id="form3Example3"
+                    class="form-control"
+                    required
+                  />
+                  <div>
+                      <div class="text-danger">
+                        Email is required.
+                      </div>
+                  </div>
+                </div>
+  
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">User Name</label>
+                  <input
+                    type="email"
+                    formControlName="userName"
+                    id="form3Example3"
+                    class="form-control"
+                  />
+                  <div >
+                      <div class="text-danger" >
+                        Username is required.
+                      </div>
+                  </div>
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4">Password</label>
+                  <input
+                    type="password"
+                    formControlName="password"
+                    id="form3Example4"
+                    class="form-control"
+                  />
+                  <div>
+                      <div class="text-danger" >
+                        Password is required.
+                      </div>
+                  </div>
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    formControlName="confirmPassword"
+                    id="form3Example4"
+                    class="form-control"
+                  />
+                  <div >
+                      <div class="text-danger">
+                        Password and Confirm Password should be matched.
+                      </div>
+                  </div>
+                </div>
+  
+                <!--role option label-->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="UserType">User Type</label>
+                  <select formControlName="userType" name="userType" id="UserType" class="form-control">
+                    <option value="" disabled>Select User Type</option>  
+                    <option value="donor">Blood Donor</option>
+                    <option value="organizer">Campaign Organizer</option>
+                  </select>
+                </div>
+  
+                <!-- Submit button -->
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block mb-4"
+                  
+                >
+                  Sign up
+                </button>
+  
+                <!--already have an account-->
+                <div class="form-outline mb-4">
+                  <a routerLink="../Login">Already have an accout?</a>
+                </div>
+  
+                <!-- Register buttons -->
+                <link
+                  rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                  integrity="sha512-..."
+                  crossorigin="anonymous"
+                />
+               
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img
+            src="../assets/images/ravi23_may_15.jpg"
+            class="w-100 rounded-4 shadow-4"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+  
