@@ -1,0 +1,62 @@
+<app-donorprofile-header></app-donorprofile-header>
+
+
+<main id="main" class="main">
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+  
+          <div class="card">
+            <div class="card-body">
+              <section id="whocandonate" class="about">
+                <div class="container" data-aos="fade-up">
+                  
+                  <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                      <img src="assets/images/pexels-charliehelen-robinson-4531313.jpg" width="300" height="400">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" style="text-align: center;">
+                      <br><br>
+                      <p style="font-size: 20px;">Have you donated either whole blood, plasma or platelets in the last 16 weeks?</p> <br><br>
+  
+                      <div style="display: flex; justify-content: space-between;">
+                        <button type="button" class="btn btn-danger" style="width: 200px;" onclick="location.href='../cantdonate'">Yes</button>
+                        <button type="button" class="btn btn-danger" style="width: 200px;" onclick="location.href='../body-check'">No</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+  
+                </div>
+              </section><!-- End About Us Section -->
+              <div class="container">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    <!-- Previous button --><br>
+                    <button class="btn btn-secondary" onclick="history.back()">Back</button>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <!-- Display current page number -->
+                  
+                  </div>
+                  <div class="col-md-4 text-right">
+                    <!-- Next button -->
+                    <button class="btn btn-light"  style="width: 250px;" routerLink="../checkeligibility" >Start again</button>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+
+   
+  
+  </main><!-- End #main -->
+  
+  

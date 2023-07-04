@@ -4,12 +4,12 @@ body {
 }
 
 a {
-  color: #3fbbc0;
+  color: #c03f3f;
   text-decoration: none;
 }
 
 a:hover {
-  color: #65c9cd;
+  color: #541010;
   text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #3fbbc0;
+  border: 6px solid #961616;
   border-top-color: #ecf8f9;
   border-radius: 50%;
   width: 60px;
@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #3fbbc0;
+  background: #721212;
   width: 40px;
   height: 40px;
   border-radius: 4px;
