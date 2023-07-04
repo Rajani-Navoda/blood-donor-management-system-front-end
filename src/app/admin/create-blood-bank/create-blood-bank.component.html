@@ -23,8 +23,7 @@
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Add a blood bank</h2>
               <form>
-               \
-  
+               
                 <!-- name -->
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example3" class="form-control" />
@@ -47,7 +46,7 @@
                           formControlName="firstName"
                           id="form3Example1"
                           class="form-control"
-                          required
+                       
                         />
                         <label class="form-label" for="form3Example1">District</label >
                         
@@ -61,7 +60,7 @@
                           formControlName="lastName"
                           id="form3Example2"
                           class="form-control"
-                          required
+                        
                         />
                         <label class="form-label" for="form3Example2"
                           >Zip code</label
@@ -70,7 +69,27 @@
                       </div>
                     </div>
                   </div>
-    
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="form-control" />
+                    <label class="form-label" for="form3Example3">Email address</label>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                       
+                        <input
+                          type="text"
+                          formControlName="firstName"
+                          id="form3Example1"
+                          class="form-control"
+                        
+                        />
+                        <label class="form-label" for="form3Example1">Contact</label >
+                        
+                      </div>
+                    </div>
+                    </div>
+
                   <div class="form-outline mb-4">
                     <input type="text" id="form3Example3" class="form-control" />
                     <label class="form-label" for="form3Example3">Choose the location</label>
@@ -90,13 +109,15 @@
   
   
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-danger btn-block mb-4">
+                <button type="submit" class="btn btn-danger btn-block mb-4" style="width: 300px;">
                   Create
                 </button>
+                
   
                 <!-- Register buttons -->
                 
               </form>
+              
             </div>
           </div>
         </div>
