@@ -23,15 +23,16 @@
             <h4 class="fw-bold mb-5">Health information</h4>
 
             
-            <form>
+      <form (ngSubmit)="onSubmit(donorregistration2)" #donorregistration2="ngForm">
             
             <!--Blood group-->
               <div class="row">
                 <div class="col-md-6 mb-4">
                  <div class="form-outline">
-                      <select id="bloodGroup" class="form-select">
-                        <option value="" disabled selected>Select blood group</option>
-                        <option value="A+">A+</option>
+                  <label class="form-label" for="bloodGroup">Blood group</label>
+                      <select id="bloodGroup" class="form-select" name="Bloodgroup" ngModel required>
+                        <option value="" disabled selected >Select blood group</option>
+                        <option value="A+" >A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
                         <option value="B-">B-</option>
@@ -40,7 +41,7 @@
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                      </select>
-                <label class="form-label" for="bloodGroup">Blood group</label>
+               
               </div>
             </div>
           </div>
@@ -48,30 +49,42 @@
           <div class="row">
             <div class="col-md-6 mb-4">
               <div class="form-outline">
-                <input type="text" id="height" class="form-control" />
-                <label class="form-label" for="height">Height (in cm)</label>
+                <label class="form-label" for="height" >Height (in cm)</label>
+                <input type="text" id="height" class="form-control" name="height" ngModel required #height="ngModel"/>
+                <div>
+                  <small *ngIf="height.invalid && height.touched">Height is required</small>
+                </div>
+                
               </div>
             </div>
             <div class="col-md-6 mb-4">
               <div class="form-outline">
-                <input type="text" id="weight" class="form-control" />
                 <label class="form-label" for="weight">Weight (in kg)</label>
+                <input type="text" id="weight" class="form-control"  name="Weight" ngModel required #weight="ngModel"/>
+                <div>
+                  <small *ngIf="weight.invalid && weight.touched">Weight is required</small>
+                </div>
+                
               </div>
             </div>
             <div class="col-md-6 mb-4">
               <div class="form-outline">
-                <input type="text" id="bmi" class="form-control"  />
-                <label class="form-label" for="bmi">BMI</label>
+                <label class="form-label" for="BMI" >BMI</label>
+                <input type="text" id="bmi" class="form-control"  name="BMI" ngModel required #BMI="ngModel"/>
+                <div>
+                  <small *ngIf="BMI.invalid && BMI.touched">BMI is required. <a href="https://www.calculator.net/bmi-calculator.html">Click here to calculate your BMI value.</a></small>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="col-md-12">
             <div class="form-outline">
-              <textarea id="specialConditions" class="form-control" rows="4"></textarea>
-              <label class="form-label" for="specialConditions">Do you have any Special health condtion. Add here</label>
+              <label class="form-label" for="specialConditions" >Do you have any Special health condtion. Add here</label>
+              <textarea id="specialConditions" class="form-control" rows="4" name="Healthconditions" ngModel ></textarea>
+              
             </div>
-          </div>
+          </div><br><br>
    
 
               <!-- Submit button -->
@@ -87,8 +100,10 @@
                   
                   </div>
                   <div class="col-md-4 text-right">
+
                     <!-- Next button -->
-                    <button class="btn btn-danger"  style="width: 250px;" routerLink="../donorprofile-home" >Submit</button>
+                    <input type="Submit" value="Submit" class="btn btn-danger" style="width: 250px;" [disabled]="!donorregistration2.valid">
+                    
                   </div>
                 </div>
               </div>

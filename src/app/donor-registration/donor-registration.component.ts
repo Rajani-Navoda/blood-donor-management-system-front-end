@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-donor-registration',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./donor-registration.component.css']
 })
 export class DonorRegistrationComponent {
+
+  onSubmit(form: NgForm){
+    console.log(form);
+  }
 
 }

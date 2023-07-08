@@ -655,3 +655,15 @@ h6 {
   background-color: #ea11114b;
 }
 
+
+
+
+input.ng-invalid.ng-touched{
+
+  border: red 1px solid;
+}
+
+small{
+  color: red;
+}
+

@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {Router, RouterModule, Routes} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
@@ -57,6 +58,7 @@ import { CreateBloodBankComponent } from './admin/create-blood-bank/create-blood
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+
 
 
 const appRoute: Routes = [
@@ -178,7 +180,8 @@ const appRoute: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
-    GoogleMapsModule
+    GoogleMapsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

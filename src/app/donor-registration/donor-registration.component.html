@@ -23,41 +23,60 @@
             <h4 class="fw-bold mb-5">personal information</h4>
 
             
-            <form>
+            <form (ngSubmit)="onSubmit(donorregistration1)" #donorregistration1="ngForm">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control" />
                     <label class="form-label" for="firstName">First name</label>
+                    <input type="text" id="firstName" class="form-control" name="Fisrstname" ngModel required #firstname="ngModel"/>
+                    <div>
+                      <small *ngIf="firstname.invalid &&firstname.touched">First name is required.</small>
+                    </div>
+                    
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control" />
                     <label class="form-label" for="lastName">Last name</label>
+                    <input type="text" id="lastName" class="form-control" name="Lastname" ngModel required #lastname="ngModel"/>
+                    <div>
+                      <small *ngIf="lastname.invalid &&lastname.touched">last name is required.</small>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
   
               <!-- Full name -->
               <div class="form-outline">
-                <input type="text" id="fullName" class="form-control" />
                 <label class="form-label" for="fullName">Full name (According to the NIC)</label>
+                <input type="text" id="fullName" class="form-control" name="fullname" ngModel required #fullname="ngModel"/>
+                <div>
+                  <small *ngIf="fullname.invalid &&fullname.touched">Enter your full name.</small>
+                </div>
               </div><br>
   
               <!-- NIC and date of birth -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="nicNumber" class="form-control" />
                     <label class="form-label" for="nicNumber">NIC number</label>
+                    <input type="text" id="nicNumber" class="form-control" name="NIC" ngModel required #NIC="ngModel"/>
+                    
+                    <div>
+                      <small *ngIf="NIC.invalid && NIC.touched">NIC number is required.</small>
+                    </div>
+
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="date" id="dateOfBirth" class="form-control" />
                     <label class="form-label" for="dateOfBirth">Date of birth</label>
+                    <input type="date" id="dateOfBirth" class="form-control" name="DOB" ngModel required #DOB="ngModel"/>
+                    <div>
+                      <small *ngIf="DOB.invalid && DOB.touched">choose your birthday</small>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -66,17 +85,17 @@
               <div class="col-md-6">
                 <label class="form-label">Gender :  </label>
                 <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male">
+                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male" name="gender" ngModel>
                   <label class="form-check-label" for="maleRadio">Male</label>
                 </div>
   
                 <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female">
+                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female" name="gender" ngModel>
                   <label class="form-check-label" for="femaleRadio">Female</label>
                 </div>
   
                 <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="unknownRadio" value="unknown">
+                  <input class="form-check-input" type="radio" name="gender" id="unknownRadio" value="unknown" name="gender" ngModel>
                   <label class="form-check-label" for="unknownRadio">Unknown</label>
                 </div>
               </div>
@@ -86,14 +105,14 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="addressLine1" class="form-control" />
                     <label class="form-label" for="addressLine1">Address Line 1</label>
+                    <input type="text" id="addressLine1" class="form-control" />
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="addressLine2" class="form-control" />
                     <label class="form-label" for="addressLine2">Address Line 2</label>
+                    <input type="text" id="addressLine2" class="form-control" />
                   </div>
                 </div>
               </div>
@@ -101,14 +120,14 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="addressLine1" class="form-control" />
                     <label class="form-label" for="addressLine1">Address Line 3</label>
+                    <input type="text" id="addressLine1" class="form-control" />
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="addressLine2" class="form-control" />
                     <label class="form-label" for="addressLine2">Address Line 4</label>
+                    <input type="text" id="addressLine2" class="form-control" />
                   </div>
                 </div>
               </div>
@@ -117,23 +136,34 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="city" class="form-control" />
                     <label class="form-label" for="city">City</label>
+                    <input type="text" id="city" class="form-control" name="city" ngModel required #city="ngModel"/>
+                    <div>
+                      <small *ngIf="city.invalid && city.touched">Enter your nearest city.</small>
+                    </div>
+
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="zip" class="form-control" />
-                    <label class="form-label" for="zip">Zip/Postal code</label>
+                    <label class="form-label" for="zip">Postal code</label>
+                    <input type="text" id="zip" class="form-control" name="ZIPcode" ngModel required #zipcode="ngModel"/>
+                    <div>
+                      <small *ngIf="zipcode.invalid && zipcode.touched">Check the postalcode in your address.<a href="https://nation.lk/postalcode/" target="_blank">Find your postal code.(Click here!)</a></small>
+                      
+                    </div>
                   </div>
                 </div>
               </div>
   
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="email" class="form-control" />
                 <label class="form-label" for="email">Email address</label>
-              </div>
+                <input type="email" id="email" class="form-control" name="email" ngModel required email #email="ngModel"/>
+                <div>
+                  <small *ngIf="email.invalid && email.touched">Enter your email address.</small>
+                </div>
+              </div><br>
 
            
                 <div class="col-md-12">
@@ -147,18 +177,22 @@
                 
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="tel" id="city" class="form-control" />
                     <label class="form-label" for="city">Contact no: Mobile</label>
+                    <input type="tel" id="city" class="form-control" name="conatctMobile" ngModel required #contactmobile="ngModel"/>
+                    <div>
+                      <small *ngIf="contactmobile.invalid && contactmobile.touched">contact number is required.</small>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="tel" id="zip" class="form-control" />
                     <label class="form-label" for="zip">Contact no: Home</label>
+                    <input type="tel" id="zip" class="form-control" name="contactHome" ngModel />
+                    
                   </div>
                 </div>
                
-              </div>
+              </div><br>
 
               <div class="col-md-12">
                 <button type="button" class="btn btn-outline-info" onclick="verifyContactNumber()" style="width: 500px;">Verify your Contact Number</button>
@@ -190,7 +224,8 @@
                   </div>
                   <div class="col-md-4 text-right">
                     <!-- Next button -->
-                    <button class="btn btn-primary"  style="width: 250px;" routerLink="../donor-registration2" >Next</button>
+                    <input type="submit" value="Next" class="btn btn-primary"  style="width: 250px;" [disabled]="!donorregistration1.valid">
+                    <!--routerLink="../donor-registration2" -->
                   </div>
                 </div>
               </div>

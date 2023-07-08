@@ -9,71 +9,95 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Make an appointment</h2>
 
-              <form>
+              <form (ngSubmit)="onSubmit(makeappointment)" #makeappointment="ngForm">
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example1cg">Donor registration number</label>
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="registrationNo" ngModel required #DonorRegNo="ngModel"/>
+                 
+                  <div>
+                    <small *ngIf="DonorRegNo.invalid && DonorRegNo.touched">Donor Registration number is required</small>
+                  </div>
+         
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Name</label>
+                  <label class="form-label" for="form3Example1cg">Name</label>
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="name" ngModel required #name="ngModel"/>
+                    <div>
+                      <small *ngIf="name.invalid && name.touched">Your name is required.</small>
+                    </div>
+                    
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Your Email</label>
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email" ngModel required email #email="ngModel"/>
+                  <div>
+                    <small *ngIf="email.invalid && email.touched">email is required or invalid email.</small>
+                  </div>
                 </div>
 
+                
+
+                  <!--Blood group-->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                 <div class="form-outline">
+                  <label class="form-label" for="bloodGroup">Blood group</label>
+                      <select id="bloodGroup" class="form-select" name="Bloodgroup" ngModel required>
+                        <option value="" disabled selected >Select blood group</option>
+                        <option value="A+" >A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                     </select>
+               
+              </div>
+            </div>
+          </div>
                 <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Blood Group</label>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Age</label>
+                  <label class="form-label" for="form3Example1cg">Age</label>
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="age" ngModel/>
+                    
                 </div>
                 <!-- Gender -->
               <div class="col-md-6">
                 <label class="form-label">Gender :  </label>
                 <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male">
+                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male" name="gender" ngModel />
                   <label class="form-check-label" for="maleRadio">Male</label>
                 </div>
   
                 <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female">
+                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female"  name="gender" ngModel>
                   <label class="form-check-label" for="femaleRadio">Female</label>
                 </div>
   
-                <div class="form-check form-check-inline mb-4">
-                  <input class="form-check-input" type="radio" name="gender" id="unknownRadio" value="unknown">
-                  <label class="form-check-label" for="unknownRadio">Unknown</label>
-                </div>
+                
               </div>
+
+
+
+              
               <div class="form-outline mb-4">
-                <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
                 <label class="form-label" for="form3Example1cg">Contact no:</label>
+                <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="ContactNo" ngModel required #contactnumber="ngModel"/>
+                <div>
+                  <small *ngIf="contactnumber.invalid && contactnumber.touched">Your contact number is required.</small>
+                </div>
             </div>
 
                 
 
-           
-
-                <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                  <label class="form-check-label" for="form2Example3g">
-                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                  </label>
-                </div>
-
                 <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-primary" routerLink="../donorprofile-home">Register</button>
+                  <input type="submit" class="btn btn-primary" value="Register" [disabled]="!makeappointment.valid">
                 </div>
 
-                
               </form>
 
             </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-schedule-campaign2',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./schedule-campaign2.component.css']
 })
 export class ScheduleCampaign2Component {
+
+  onSubmit(form: NgForm){
+    console.log(form);
+  }
 
 }

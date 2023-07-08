@@ -22,60 +22,73 @@
           <h2 class="fw-bold mb-5">Campaign-Request form</h2>
          
           
-          <form>
+          <form  (ngSubmit)="onSubmit(Requestcampaign)" #Requestcampaign="ngForm">
            
             <div class="section-title">
               
               <div class="input-group" style="width: 75%;" >
-                <input type="search" class="form-control rounded" placeholder="Nearest Bloodbank" aria-label="Search" aria-describedby="search-addon" />
+               
+                <input type="search" class="form-control rounded" placeholder="Nearest Bloodbank" aria-label="Search" aria-describedby="search-addon" name="nearestbloodbank" ngModel required   #nearestbloodbank="ngModel"/>
                 <button type="button" class="btn btn-outline-primary">Choose blood bank</button> 
+                
               </div>
               
             </div>
 
-           
+
+
 
             <!-- Full name -->
             <div class="form-outline"><br><br>
-              <input type="text" id="fullName" class="form-control" />
               <label class="form-label" for="fullName">Full name (According to the NIC)</label>
+              <input type="text" id="fullName" class="form-control" name="fullname" ngModel required #fullname="ngModel"/>
+              <div>
+                <small *ngIf="fullname.invalid && fullname.touched">Full name is required</small>
+              </div>
+              
             </div><br>
 
             <!-- NIC and date of birth -->
             <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="text" id="nicNumber" class="form-control" />
                   <label class="form-label" for="nicNumber">NIC number</label>
+                  <input type="text" id="nicNumber" class="form-control" name="NICnumber" ngModel required #nic="ngModel"/>
+                  <div>
+                    <small *ngIf="nic.invalid && nic.touched">NIC number required</small>
+                  </div>
                 </div>
               </div>
-              
             </div>
 
             <div class="row">
               
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="tel" id="city" class="form-control" />
                   <label class="form-label" for="city">Contact no: Mobile 1</label>
+                  <input type="tel" id="city" class="form-control" name="Contact1" ngModel required #contact="ngModel"/>
+                  <div>
+                    <small *ngIf="contact.invalid && contact.touched">contact number is required</small>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="tel" id="zip" class="form-control" />
                   <label class="form-label" for="zip">Contact no: Mobile 2</label>
+                  <input type="tel" id="zip" class="form-control" />
+                  
                 </div>
               </div>
              
             </div>
 
             <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" />
               <label class="form-label" for="email">Email address</label>
+              <input type="email" id="email" class="form-control" name="email" ngModel required email #email="ngModel"/>
+              <div>
+                <small *ngIf="email.invalid && email.touched">email is required or invalid email.</small>
+              </div>
             </div>
-
-
-         
 
             <!-- Submit button -->
             
@@ -87,12 +100,12 @@
                 
                 </div>
                 <div class="col-md-4 text-right">
+                  <br>
                   <!-- Next button -->
-                  <button class="btn btn-primary"  style="width: 250px;" routerLink="../shedule-campaign2" >Next</button>
+                  <input type="submit" class="btn btn-primary"  style="width: 250px;"  value="Next"  [disabled]="!Requestcampaign.valid">
                 </div>
               </div>
             </div>
-
 
           </form>
         </div>

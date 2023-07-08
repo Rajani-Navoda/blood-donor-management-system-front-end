@@ -30,16 +30,16 @@
             </div>
             <br><br>
 
-            <form class="text-center">
+            <form class="text-center" (ngSubmit)="onSubmit(login)" #login="ngForm">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" id="form2Example1" class="form-control" name="email" ngModel/>
                 <label class="form-label" for="form2Example1">Email address</label>
               </div>
             
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="form2Example2" class="form-control" name="Password" ngModel/>
                 <label class="form-label" for="form2Example2">Password</label>
               </div>
             
@@ -64,9 +64,9 @@
               </div>
             
               <!-- Submit button -->
-              <a routerLink="../donorprofile">
-                <button type="button" class="btn btn-primary btn-block mb-4" style="width: 100%;">Sign in</button>
-              </a>
+              
+                <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4" style="width: 100%;">
+              
               
             </form>
             <a routerLink="">

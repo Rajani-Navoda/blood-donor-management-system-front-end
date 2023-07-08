@@ -18,3 +18,11 @@ a {
     background-color: #04AA6D;
     color: white;
   }
+
+
+  input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}
+small{
+    color: red;
+}
