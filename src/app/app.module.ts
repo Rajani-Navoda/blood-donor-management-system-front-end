@@ -58,6 +58,7 @@ import { CreateBloodBankComponent } from './admin/create-blood-bank/create-blood
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { BloodbankDonationcampaignsComponent } from './bloodbank-profile/bloodbank-donationcampaigns/bloodbank-donationcampaigns.component';
 
 
 
@@ -174,6 +175,7 @@ const appRoute: Routes = [
     AdminSettingsComponent,
     AdminComponent,
     AdminHomeComponent,
+    BloodbankDonationcampaignsComponent,
    
   ],
   imports: [
