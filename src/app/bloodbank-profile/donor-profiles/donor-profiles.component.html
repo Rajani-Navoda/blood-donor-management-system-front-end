@@ -3,7 +3,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Go to donor profiles</h1>
+      <h1>View Donors</h1>
       
     </div><!-- End Page Title -->
 
@@ -13,38 +13,40 @@
 
           <div class="card">
             <div class="card-body">
-              <section class="vh-100" style="background-image: url('assets/images/blood-donation-geb745546c_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                    <div class="container py-5 h-100">
-                      <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                          <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                            <div class="card-body p-5 text-center">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Donor ID</th>
+                    <th>Full Name</th>
+                    <th>NIC</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>conatct-mobile</th>
+                    <th>Blood group</th>
+                    <th>Special conditions</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr *ngFor="let Donor of Donors ">
+                   
+                    <td>{{ Donor.Donor_ID }}</td>
+                    <td>{{ Donor.fullName }}</td>
+                    <td>{{ Donor.NIC }}</td>
+                    <td>{{ Donor.DOB }}</td>
+                    <td>{{ Donor.gender }}</td>
+                    <td>{{ Donor.address }}</td>
+                    <td>{{ Donor.email }}</td>
+                    <td>{{ Donor.contactMobile }}</td>
+                    <td>{{ Donor.bloodGroup }}</td>
+                    <td>{{ Donor.specialConditions }}</td>
                   
-                              <h3 class="mb-5">Sign in</h3>
-                  
-                              <div class="form-outline mb-4">
-                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-                                <label class="form-label" for="typeEmailX-2">Email</label>
-                              </div>
-                  
-                              <div class="form-outline mb-4">
-                                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                                <label class="form-label" for="typePasswordX-2">Password</label>
-                              </div>
-                  
-                              <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-                  
-                              <hr class="my-4">
-                  
-                              
-                  
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-        
+                  </tr>
+                </tbody>
+
+              </table>
             </div>
           </div>
 

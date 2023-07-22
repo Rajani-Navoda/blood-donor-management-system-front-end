@@ -27,74 +27,7 @@
               
                 </div>
               
-                <div>
                 
-                    <div style="border:0; width: 100%; height: 350px;" >
-                      <google-map height="600px"
-                                width="100%"
-                                [center]="center"
-                                [zoom]="zoom"
-                                (mapClick)="addMarker($event)">
-                      <map-marker #marker="mapMarker"
-                                  *ngFor="let markerPosition of markerPositions"
-                                  [position]="markerPosition"
-                                  (mapClick)="openInfoWindow(marker)"></map-marker>
-                      <map-info-window>
-                        <section id="contact" class="contact">
-                          <div class="container" data-aos="fade-up">
-                    
-                            <div class="section-title">
-                              <h4>Campaign details</h4>
-                            </div>
-                    
-                            <div class="row mt-5">
-                    
-                              <div>
-                                <div class="info">
-                                  <div class="address">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h4>Venue</h4>
-                                    <p>DGH Gampaha</p>
-                                  </div>
-                                  <br>
-                    
-                                  <div class="email">
-                                    <i class="bi bi-calendar3"></i>
-                                    <h4>date</h4>
-                                    <p>12/12/2022</p>
-                                  </div>
-                                  <br>
-                    
-                                  <div class="phone">
-                                    <i class="bi bi-clock"></i>
-                                    <h4>time</h4>
-                                    <p>8.00am  - 12.00pm</p>
-                                  </div>
-                                  <br>
-                    
-                                  <div class="phone">
-                                    <i class="bi bi-people"></i>
-                                    <h4>Organized by:</h4>
-                                    <p>LEO club of University of Kelaniya</p>
-                                  </div>
-                                  <br>
-                    
-                    
-                                </div>
-                                <button type="button" class="btn btn-primary" style="width: 100%;">
-                                  <a routerLink="../make-appointment" style="color: aliceblue;">make an appointment</a></button>
-                                </div>
-                    
-                              </div>
-                    
-                    
-                            </div>
-                    
-                        </section><!-- End Contact Section -->
-                    
-                      </map-info-window>
-                    </google-map>
-                    <br><br><br>
 
                     <section class="section">
                       <div class="row">
@@ -139,9 +72,8 @@
                       </div>
                     </section>
 
-                    </div>
+                  
                     
-                </div>
               </section>
 
 

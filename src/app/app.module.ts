@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {Router, RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +14,9 @@ import { DonorRegistration2Component } from './donor-registration2/donor-registr
 import { DonorprofileHeaderComponent } from './donor-profie/donorprofile-header/donorprofile-header.component';
 import { DonorcardComponent } from './donor-profie/donorcard/donorcard.component';
 import { DonorprofilesettingsComponent } from './donor-profie/donorprofilesettings/donorprofilesettings.component';
-import { EditdonorprofileComponent } from './donor-profie/editdonorprofile/editdonorprofile.component';
+
 import { DonationHistoryComponent } from './donor-profie/donation-history/donation-history.component';
-import { AddNewDonationComponent } from './add-new-donation/add-new-donation.component';
+import { AddNewDonationComponent } from './bloodbank-profile/add-new-donation/add-new-donation.component';
 import { OrganizerprofileHeaderComponent } from './organizer-profile/organizerprofile-header/organizerprofile-header.component';
 import { BloodbankprofileHeaderComponent } from './bloodbank-profile/bloodbankprofile-header/bloodbankprofile-header.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
@@ -52,13 +53,12 @@ import { BloodbankProfileComponent } from './bloodbank-profile/bloodbank-profile
 import { BloodbankHomeComponent } from './bloodbank-profile/bloodbank-home/bloodbank-home.component';
 import { CampaignReguestsComponent } from './bloodbank-profile/campaign-reguests/campaign-reguests.component';
 import { DonorProfilesComponent } from './bloodbank-profile/donor-profiles/donor-profiles.component';
-import { CalenderComponent } from './calender/calender.component';
+
 import { BloodbankSettingsComponent } from './bloodbank-profile/bloodbank-settings/bloodbank-settings.component';
 import { CreateBloodBankComponent } from './admin/create-blood-bank/create-blood-bank.component';
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { BloodbankDonationcampaignsComponent } from './bloodbank-profile/bloodbank-donationcampaigns/bloodbank-donationcampaigns.component';
 
 
 
@@ -77,7 +77,7 @@ const appRoute: Routes = [
  {path:'donor-registration2',component:DonorRegistration2Component},
  {path:'donorcard', component:DonorcardComponent},
  {path:'donorprofilesettings', component:DonorprofilesettingsComponent},
- {path:'editdonorprofile', component:EditdonorprofileComponent},
+
  {path:'organizerprofile-header',component:OrganizerprofileHeaderComponent},
  {path:'bloodbankprofile-header',component:BloodbankprofileHeaderComponent},
  {path:'admin-dashboard', component:AdminDashboardComponent},
@@ -111,7 +111,7 @@ const appRoute: Routes = [
  {path:'bloodbank-settings', component:BloodbankSettingsComponent},
  {path:'campaign-requests', component:CampaignReguestsComponent},
  {path:'donor-profiles', component:DonorProfilesComponent},
- {path:'calender', component:CalenderComponent},
+
  {path:'create-bloodbank', component:CreateBloodBankComponent},
  {path:'admin-home', component:AdminHomeComponent},
  {path:'admin-settings', component:AdminSettingsComponent},
@@ -132,7 +132,7 @@ const appRoute: Routes = [
     DonorprofileHeaderComponent,
     DonorcardComponent,
     DonorprofilesettingsComponent,
-    EditdonorprofileComponent,
+
     DonationHistoryComponent,
     AddNewDonationComponent,
     OrganizerprofileHeaderComponent,
@@ -170,20 +170,20 @@ const appRoute: Routes = [
     BloodbankHomeComponent,
     CampaignReguestsComponent,
     DonorProfilesComponent,
-    CalenderComponent,
+
     BloodbankSettingsComponent,
     AdminSettingsComponent,
     AdminComponent,
     AdminHomeComponent,
-    BloodbankDonationcampaignsComponent,
-   
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
     GoogleMapsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
