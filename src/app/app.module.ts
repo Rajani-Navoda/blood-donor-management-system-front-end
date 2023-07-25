@@ -14,7 +14,6 @@ import { DonorRegistration2Component } from './donor-registration2/donor-registr
 import { DonorprofileHeaderComponent } from './donor-profie/donorprofile-header/donorprofile-header.component';
 import { DonorcardComponent } from './donor-profie/donorcard/donorcard.component';
 import { DonorprofilesettingsComponent } from './donor-profie/donorprofilesettings/donorprofilesettings.component';
-
 import { DonationHistoryComponent } from './donor-profie/donation-history/donation-history.component';
 import { AddNewDonationComponent } from './bloodbank-profile/add-new-donation/add-new-donation.component';
 import { OrganizerprofileHeaderComponent } from './organizer-profile/organizerprofile-header/organizerprofile-header.component';
@@ -53,13 +52,12 @@ import { BloodbankProfileComponent } from './bloodbank-profile/bloodbank-profile
 import { BloodbankHomeComponent } from './bloodbank-profile/bloodbank-home/bloodbank-home.component';
 import { CampaignReguestsComponent } from './bloodbank-profile/campaign-reguests/campaign-reguests.component';
 import { DonorProfilesComponent } from './bloodbank-profile/donor-profiles/donor-profiles.component';
-
 import { BloodbankSettingsComponent } from './bloodbank-profile/bloodbank-settings/bloodbank-settings.component';
 import { CreateBloodBankComponent } from './admin/create-blood-bank/create-blood-bank.component';
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-
+import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 
 
 const appRoute: Routes = [
@@ -77,7 +75,7 @@ const appRoute: Routes = [
  {path:'donor-registration2',component:DonorRegistration2Component},
  {path:'donorcard', component:DonorcardComponent},
  {path:'donorprofilesettings', component:DonorprofilesettingsComponent},
-
+ {path:'OrganizerRegistration',component:OrganizerRegistrationComponent},
  {path:'organizerprofile-header',component:OrganizerprofileHeaderComponent},
  {path:'bloodbankprofile-header',component:BloodbankprofileHeaderComponent},
  {path:'admin-dashboard', component:AdminDashboardComponent},
@@ -111,7 +109,6 @@ const appRoute: Routes = [
  {path:'bloodbank-settings', component:BloodbankSettingsComponent},
  {path:'campaign-requests', component:CampaignReguestsComponent},
  {path:'donor-profiles', component:DonorProfilesComponent},
-
  {path:'create-bloodbank', component:CreateBloodBankComponent},
  {path:'admin-home', component:AdminHomeComponent},
  {path:'admin-settings', component:AdminSettingsComponent},
@@ -132,7 +129,6 @@ const appRoute: Routes = [
     DonorprofileHeaderComponent,
     DonorcardComponent,
     DonorprofilesettingsComponent,
-
     DonationHistoryComponent,
     AddNewDonationComponent,
     OrganizerprofileHeaderComponent,
@@ -170,11 +166,11 @@ const appRoute: Routes = [
     BloodbankHomeComponent,
     CampaignReguestsComponent,
     DonorProfilesComponent,
-
     BloodbankSettingsComponent,
     AdminSettingsComponent,
     AdminComponent,
     AdminHomeComponent,
+    OrganizerRegistrationComponent,
  
   ],
   imports: [
