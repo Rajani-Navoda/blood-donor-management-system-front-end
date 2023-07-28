@@ -1,5 +1,4 @@
-
- <!-- Section: Design Block -->
+<!-- Section: Design Block -->
 <section class="text-center text-lg-start">
   <style>
     .cascading-right {
@@ -17,51 +16,69 @@
   <div class="container py-4">
     <div class="row g-0 align-items-center">
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="card cascading-right" style="
+        <div
+          class="card cascading-right"
+          style="
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
-            ">
+          "
+        >
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form (ngSubmit)="onSubmit(signup)" #signup="ngForm">
+            <form (ngSubmit)="signup(signUpForm)" #signUpForm="ngForm">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
-
                   <div class="form-outline">
-                    <label class="form-label" for="form3Example1">First name</label>
-                    <input type="text" id="form3Example1" class="form-control" name="Firstname" ngModel required #fname="ngModel"/>
+                    <label class="form-label" for="form3Example1"
+                      >First name</label
+                    >
+                    <input
+                      type="text"
+                      id="form3Example1"
+                      class="form-control"
+                      name="firstName"
+                      ngModel
+                      required
+                      #firstName="ngModel"
+                    />
                     <div>
-                      <small *ngIf="fname.invalid && fname.touched">First name is required</small>
+                      <small *ngIf="firstName.invalid && firstName.touched"
+                        >First name is required</small
+                      >
                     </div>
-                    
-                    
-                    
-                    
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <label class="form-label" for="form3Example2">Last name</label>
-                    <input type="text" id="form3Example2" class="form-control" name="Lastname" ngModel required #lname="ngModel"/>
+                    <label class="form-label" for="form3Example2"
+                      >Last name</label
+                    >
+                    <input
+                      type="text"
+                      id="form3Example2"
+                      class="form-control"
+                      name="lastName"
+                      ngModel
+                      required
+                      #lastName="ngModel"
+                    />
                     <div>
-                      <small *ngIf="lname.invalid && lname.touched">Last name is required</small>
+                      <small *ngIf="lastName.invalid && lastName.touched"
+                        >Last name is required</small
+                      >
                     </div>
-                    
-                    
                   </div>
                 </div>
               </div>
 
               <!-- username input -->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Username</label>
-                <input type="email" id="form3Example3" class="form-control" name="username" ngModel required  #username="ngModel"/>
+                <label class="form-label" for="form3Example3">Email address</label>
+                <input type="email" id="form3Example3" class="form-control" name="email" ngModel required email #email="ngModel"/>
                 <div>
-                  <small *ngIf="username.invalid && username.touched">Username should not be empty.</small>
+                  <small *ngIf="email.invalid && email.touched">insert a vaild email</small>
                 </div>
-               
-                
               </div>
 
 
@@ -69,52 +86,109 @@
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Password</label>
-                <input type="password" id="form3Example4" class="form-control" name="password" ngModel required #password="ngModel"/>
+                <input
+                  type="password"
+                  id="form3Example4"
+                  class="form-control"
+                  name="password"
+                  ngModel
+                  required
+                  #password="ngModel"
+                />
                 <div>
-                  <small *ngIf="password.invalid && password.touched">insert a vaild password</small>
+                  <small *ngIf="password.invalid && password.touched"
+                    >insert a vaild password</small
+                  >
                 </div>
-               
               </div>
 
               <!-- Confirm password-->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example4">Confirm Password</label>
-                <input type="password" id="form3Example4" class="form-control" name="confirmpassword" ngModel required #confirmpassword="ngModel"/>
+                <label class="form-label" for="form3Example4"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  id="form3Example5"
+                  class="form-control"
+                  name="confirmPassword"
+                  ngModel
+                  required
+                  #confirmPassword="ngModel"
+                />
                 <div>
-                  <small *ngIf="confirmpassword.invalid && confirmpassword.touched">Password is not matched</small>
+                  <small
+                    *ngIf="confirmPassword.invalid && confirmPassword.touched"
+                    >Password is not matched</small
+                  >
                 </div>
               </div>
-              <br>
+              <br />
 
               <div class="form-outline mb-4">
-                
-                <select name="userType" id="UserType" class="form-control" [ngModel]="defaultuser">
-                  <option value="">Select User Type</option>  
+                <label class="form-label" for="form3Example4"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="form3Example6"
+                  class="form-control"
+                  name="email"
+                  ngModel
+                  required
+                  #email="ngModel"
+                />
+                <div>
+                  <small
+                    *ngIf="email.invalid && email.touched"
+                    >Insert a valid email</small
+                  >
+                </div>
+              </div>
+              <br />
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="userType"
+                  >User Type</label
+                >
+                <select
+                  name="userType"
+                  id="UserType"
+                  class="form-control"
+                  ngModel
+                  required
+                  #userType="ngModel"
+                >
+                  <option value="">Select User Type</option>
                   <option value="donor">Blood Donor</option>
                   <option value="organizer">Campaign Organizer</option>
                 </select>
-                
               </div>
 
-              <input type="submit" value="Sign Up" class="btn btn-primary btn-block mb-4" [disabled]="!signup.valid">
-                  
-  
-               
-                <div class="form-outline mb-4">
-                  <a routerLink="../login">Already have an accout?</a>
-                </div>
+              <input
+                type="submit"
+                value="Sign Up"
+                class="btn btn-primary btn-block mb-4"
+                [disabled]="!signUpForm.valid"
+              />
 
+              <div class="form-outline mb-4">
+                <a routerLink="../login">Already have an accout?</a>
+              </div>
             </form>
           </div>
         </div>
       </div>
 
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/images/ravi23_may_15.jpg" class="w-100 rounded-4 shadow-4" alt=""  />
+        <img
+          src="../assets/images/ravi23_may_15.jpg"
+          class="w-100 rounded-4 shadow-4"
+          alt=""
+        />
       </div>
     </div>
   </div>
   <!-- Jumbotron -->
 </section>
 <!-- Section: Design Block -->
-  

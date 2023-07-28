@@ -30,17 +30,17 @@
             </div>
             <br><br>
 
-            <form class="text-center" (ngSubmit)="onSubmit(login)" #login="ngForm">
+            <form class="text-center" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" name="email" ngModel/>
-                <label class="form-label" for="form2Example1">Email address</label>
+                <label class="form-label" for="form2Example1">User Name</label>
+                <input type="email" id="form2Example1" class="form-control" name="userName" ngModel/>
               </div>
             
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" name="Password" ngModel/>
                 <label class="form-label" for="form2Example2">Password</label>
+                <input type="password" id="form2Example2" class="form-control" name="password" ngModel/>
               </div>
             
               <!-- 2 column grid layout for inline styling -->
@@ -68,7 +68,7 @@
                 <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4" style="width: 100%;">
 
             </form>
-            <a routerLink="">
+            <a routerLink="/">
               <button type="button" class="btn btn-outline-secondary" style="width: 100%;">Go to homepage</button>
             </a>
             
