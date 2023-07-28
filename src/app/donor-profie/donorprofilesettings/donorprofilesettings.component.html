@@ -1,166 +1,315 @@
 <app-donorprofile-header></app-donorprofile-header>
 <body>
-
   <main id="main" class="main">
-
     <section class="section profile">
       <div class="row">
         <div class="col-xl-4">
-
           <div class="card">
-            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+            <div
+              class="card-body profile-card pt-4 d-flex flex-column align-items-center"
+            >
+              <img
+                src="assets/images/download.png"
+                alt="Profile"
+                class="rounded-circle"
+              />
 
-              <img src="assets/images/download.png" alt="Profile" class="rounded-circle">
-              
-              
-              <h2>Rajani Navoda</h2>
+              <h2>{{ firstName }} {{ lastName }}</h2>
               <h6>AP-1234-123456</h6>
-              
             </div>
           </div>
-          <br><br>
-          
+          <br /><br />
         </div>
 
         <div class="col-xl-8">
-
           <div class="card">
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
-              <ul class="nav nav-tabs nav-tabs-bordered" >
-
+              <ul class="nav nav-tabs nav-tabs-bordered">
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Profile</button>
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile-overview"
+                  >
+                    Profile
+                  </button>
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile-edit"
+                  >
+                    Edit Profile
+                  </button>
                 </li>
-
-                
 
                 <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile-change-password"
+                  >
+                    Change Password
+                  </button>
                 </li>
-
               </ul>
               <div class="tab-content pt-2">
-
-                <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <br>
+                <div
+                  class="tab-pane fade show active profile-overview"
+                  id="profile-overview"
+                >
+                  <br />
                   <h5 class="card-title">Personal Information</h5>
-                  <br>
+                  <br />
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Date of birth</div>
-                    <div class="col-lg-9 col-md-8">10-10-1999</div>
+                    <div class="col-lg-3 col-md-4 label">Full Name</div>
+                    <div class="col-lg-9 col-md-8">{{ fullName }}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">NIC number</div>
+                    <div class="col-lg-9 col-md-8">{{ nic }}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Date of birth</div>
+                    <div class="col-lg-9 col-md-8">{{ dob }}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Gender</div>
-                    <div class="col-lg-9 col-md-8">Female</div>
+                    <div class="col-lg-9 col-md-8">{{ gender }}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">No. 420, Kajugolla Road, Udugampola</div>
+                    <div class="col-lg-9 col-md-8">{{ address }}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">City</div>
-                    <div class="col-lg-9 col-md-8">Gampaha</div>
+                    <div class="col-lg-9 col-md-8">{{ city }}</div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">zip-code</div>
-                    <div class="col-lg-9 col-md-8">12345</div>
+                    <div class="col-lg-3 col-md-4 label">Postal Code</div>
+                    <div class="col-lg-9 col-md-8">{{ postalCode }}</div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(+94)77 338 3286</div>
+                    <div class="col-lg-3 col-md-4 label">Mobile Phone</div>
+                    <div class="col-lg-9 col-md-8">{{ contactMobile }}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Land Phone</div>
+                    <div class="col-lg-9 col-md-8">{{ contactHome }}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">HRNGuna@gmail.com</div>
+                    <div class="col-lg-9 col-md-8">{{ email }}</div>
                   </div>
 
-                  <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                    <br>
+                  <div
+                    class="tab-pane fade show active profile-overview"
+                    id="profile-overview"
+                  >
+                    <br />
                     <h5 class="card-title">Health Information</h5>
-                    <br>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label ">Blood Group</div>
-                      <div class="col-lg-9 col-md-8">AB-</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Weight</div>
-                      <div class="col-lg-9 col-md-8">55kg</div>
-                    </div>
-  
-                    
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Height</div>
-                      <div class="col-lg-9 col-md-8">160cm</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Special health status</div>
-                      <div class="col-lg-9 col-md-8">-</div>
-                    </div>
-                    <br>
-  
-                  </div>
+                    <br />
 
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Blood Group</div>
+                      <div class="col-lg-9 col-md-8">{{ bloodGroup }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Weight(kg)</div>
+                      <div class="col-lg-9 col-md-8">{{ weight }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Height(cm)</div>
+                      <div class="col-lg-9 col-md-8">{{ height }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">BMI</div>
+                      <div class="col-lg-9 col-md-8">{{ bmi }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">
+                        Special health status
+                      </div>
+                      <div class="col-lg-9 col-md-8">
+                        {{ specialConditions }}
+                      </div>
+                    </div>
+                    <br />
+                  </div>
                 </div>
 
-        
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-
                   <!-- Profile Edit Form -->
-                  <form>
-                    
-
+                  <form
+                    (ngSubmit)="updateDonorDetails(updateDonorForm)"
+                    #updateDonorForm="ngForm"
+                  >
                     <div class="row mb-3">
                       <h4 class="fw-bold mb-5">personal information</h4>
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <label
+                        for="profileImage"
+                        class="col-md-4 col-lg-3 col-form-label"
+                        >Profile Image</label
+                      >
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/images/download.png" alt="Profile" style="max-width: 200px;" class="img-fluid">
+                        <img
+                          src="assets/images/download.png"
+                          alt="Profile"
+                          style="max-width: 200px"
+                          class="img-fluid"
+                        />
                         <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                          <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            title="Upload new profile image"
+                            ><i class="bi bi-upload"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="btn btn-danger btn-sm"
+                            title="Remove my profile image"
+                            ><i class="bi bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="firstName"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            id="firstName"
+                            class="form-control"
+                            name="firstName"
+                            [(ngModel)]="firstName"
+                            ngModel
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="lastName"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            id="lastName"
+                            class="form-control"
+                            [(ngModel)]="lastName"
+                            name="lastName"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                     </div>
 
                     <div class="form-outline">
-                      <input type="text" id="fullName" class="form-control" />
-                      <label class="form-label" for="fullName">Full name (According to the NIC)</label>
-                    </div><br>
+                      <label class="form-label" for="fullName"
+                        >Full name (According to the NIC)</label
+                      >
+                      <input
+                        type="text"
+                        id="fullName"
+                        class="form-control"
+                        [(ngModel)]="fullName"
+                        name="fullName"
+                        ngModel
+                        required
+                      />
+                    </div>
+                    <br />
 
                     <div class="col-md-6">
-                      <label class="form-label">Gender :  </label>
+                      <label class="form-label">Gender : </label>
                       <div class="form-check form-check-inline mb-4">
-                        <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male">
-                        <label class="form-check-label" for="maleRadio">Male</label>
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                          id="maleRadio"
+                          value="Male"
+                          [(ngModel)]="gender"
+                          [checked]="gender == 'Male'"
+                          ngModel
+                        />
+                        <label class="form-check-label" for="maleRadio"
+                          >Male</label
+                        >
                       </div>
-        
+
                       <div class="form-check form-check-inline mb-4">
-                        <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female">
-                        <label class="form-check-label" for="femaleRadio">Female</label>
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                          id="femaleRadio"
+                          value="Female"
+                          [(ngModel)]="gender"
+                          [checked]="gender == 'Female'"
+                          ngModel
+                          required=""
+                        />
+                        <label class="form-check-label" for="femaleRadio"
+                          >Female</label
+                        >
                       </div>
-        
+
                       <div class="form-check form-check-inline mb-4">
-                        <input class="form-check-input" type="radio" name="gender" id="unknownRadio" value="unknown">
-                        <label class="form-check-label" for="unknownRadio">Unknown</label>
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                          [(ngModel)]="gender"
+                          id="unknownRadio"
+                          value="Unknown"
+                          [checked]="gender == 'Unknown'"
+                          ngModel
+                          required
+                        />
+                        <label class="form-check-label" for="unknownRadio"
+                          >Unknown</label
+                        >
                       </div>
                     </div>
 
-                    <div class="row">
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="address">Address</label>
+                      <input
+                        type="text"
+                        id="address"
+                        class="form-control"
+                        name="address"
+                        [(ngModel)]="address"
+                        ngModel
+                        required
+                      />
+                    </div>
+
+                    <!-- <div class="row">
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input type="text" id="addressLine1" class="form-control" />
@@ -188,135 +337,249 @@
                           <label class="form-label" for="addressLine2">Address Line 4</label>
                         </div>
                       </div>
-                    </div>
-        
+                    </div> -->
+
                     <!-- City and zip -->
                     <div class="row">
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="city" class="form-control" />
                           <label class="form-label" for="city">City</label>
+                          <input
+                            type="text"
+                            id="cityEdit"
+                            class="form-control"
+                            name="city"
+                            [(ngModel)]="city"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="zip" class="form-control" />
-                          <label class="form-label" for="zip">Zip/Postal code</label>
+                          <label class="form-label" for="postalCodeEdit"
+                            >Postal code</label
+                          >
+                          <input
+                            type="text"
+                            id="postalCode"
+                            class="form-control"
+                            name="postalCode"
+                            [(ngModel)]="postalCode"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                     </div>
-        
+
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                      <input type="email" id="email" class="form-control" />
-                      <label class="form-label" for="email">Email address</label>
+                      <label class="form-label" for="email"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        name="email"
+                        [(ngModel)]="email"
+                        ngModel
+                        required
+                      />
                     </div>
 
                     <div class="row">
-                
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="tel" id="city" class="form-control" />
-                          <label class="form-label" for="city">Contact no: Mobile</label>
+                          <label class="form-label" for="contactMobile"
+                            >Contact no: Mobile</label
+                          >
+                          <input
+                            type="tel"
+                            id="contactMobile"
+                            class="form-control"
+                            name="contactMobile"
+                            [(ngModel)]="contactMobile"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="tel" id="zip" class="form-control" />
-                          <label class="form-label" for="zip">Contact no: Home</label>
+                          <label class="form-label" for="contactHome"
+                            >Contact no: Home</label
+                          >
+                          <input
+                            type="tel"
+                            id="contactHome"
+                            class="form-control"
+                            name="contactHome"
+                            [(ngModel)]="contactHome"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
-                     
                     </div>
 
                     <div class="row">
                       <h4 class="fw-bold mb-5">Health information</h4>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="height" class="form-control" />
-                          <label class="form-label" for="height">Height (in cm)</label>
+                          <label class="form-label" for="height"
+                            >Height (in cm)</label
+                          >
+                          <input
+                            type="number"
+                            id="height"
+                            class="form-control"
+                            name="height"
+                            [(ngModel)]="height"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="weight" class="form-control" />
-                          <label class="form-label" for="weight">Weight (in kg)</label>
+                          <label class="form-label" for="weight"
+                            >Weight (in kg)</label
+                          >
+                          <input
+                            type="number"
+                            id="weight"
+                            class="form-control"
+                            name="weight"
+                            [(ngModel)]="weight"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="bmi" class="form-control"  />
                           <label class="form-label" for="bmi">BMI</label>
+                          <input
+                            type="number"
+                            id="bmi"
+                            class="form-control"
+                            name="bmi"
+                            [(ngModel)]="bmi"
+                            ngModel
+                            required
+                          />
                         </div>
                       </div>
                     </div>
-          
+
                     <div class="col-md-12">
                       <div class="form-outline">
-                        <textarea id="specialConditions" class="form-control" rows="4"></textarea>
-                        <label class="form-label" for="specialConditions">Do you have any Special health condtion. Add here</label>
+                        <label class="form-label" for="specialConditions"
+                          >Do you have any Special health condtion. Add
+                          here</label
+                        >
+                        <textarea
+                          id="specialConditions"
+                          class="form-control"
+                          rows="4"
+                          name="specialConditions"
+                          [(ngModel)]="specialConditions"
+                          ngModel
+                        ></textarea>
                       </div>
                     </div>
 
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-danger">Save Changes</button>
-                    </div>
-                  </form><!-- End Profile Edit Form -->
-
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <button class="btn btn-secondary" routerLink="/donor-profile-home">
+                              Cancel
+                            </button>
+                          </div>
+                          <div class="col-md-4 text-right">
+                            <input
+                              type="submit"
+                              value="Save Changes"
+                              class="btn btn-primary"
+                              style="width: 250px"
+                              (click)="(updateDonorDetails)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </form>  
                 </div>
 
-                <div class="tab-pane fade pt-3" id="profile-settings">
-
-                
-
-                </div>
+                <div class="tab-pane fade pt-3" id="profile-settings"></div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
                   <form>
-
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <label
+                        for="currentPassword"
+                        class="col-md-4 col-lg-3 col-form-label"
+                        >Current Password</label
+                      >
                       <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input
+                          name="password"
+                          type="password"
+                          class="form-control"
+                          id="currentPassword"
+                        />
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <label
+                        for="newPassword"
+                        class="col-md-4 col-lg-3 col-form-label"
+                        >New Password</label
+                      >
                       <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input
+                          name="newpassword"
+                          type="password"
+                          class="form-control"
+                          id="newPassword"
+                        />
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                      <label
+                        for="renewPassword"
+                        class="col-md-4 col-lg-3 col-form-label"
+                        >Re-enter New Password</label
+                      >
                       <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        <input
+                          name="renewpassword"
+                          type="password"
+                          class="form-control"
+                          id="renewPassword"
+                        />
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-danger">Change Password</button>
+                      <button type="submit" class="btn btn-danger">
+                        Change Password
+                      </button>
                     </div>
-                  </form><!-- End Change Password Form -->
-
+                  </form>
+                  <!-- End Change Password Form -->
                 </div>
-
-              </div><!-- End Bordered Tabs -->
-
+              </div>
+              <!-- End Bordered Tabs -->
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-    
-
-  </main><!-- End #main -->
-
-  
+  </main>
+  <!-- End #main -->
 </body>
-
