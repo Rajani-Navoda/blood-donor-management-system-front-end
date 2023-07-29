@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Donor, Gender, BloodGroup} from '../../donor';
-import { first } from 'rxjs';
-import { DonorService } from '../../donor.service';
-
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,16 +12,12 @@ export class DonorProfilesComponent implements OnInit{
 
   Donors: Donor[] = [];
 
-  constructor(private donorService: DonorService){
+  constructor(){
 
   }
   ngOnInit(): void {
-   this.getDonors();
+   
   }
 
-  private getDonors(){
-    this.donorService.getDonorsList().subscribe(data=>{
-      this.Donors=data;
-    });
-  }
+
 } 
