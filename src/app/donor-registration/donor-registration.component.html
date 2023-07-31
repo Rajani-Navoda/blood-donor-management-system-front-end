@@ -394,7 +394,7 @@
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
                  
-                  <input type="file" id="imageUpload" name="imageUpload" accept="image/*" class="form-control" />
+                  <input type="file" id="imageUpload" name="imageUpload"  class="form-control" (change)="onFileChange($event)"/>
                   <label class="form-label" for="imageUpload">Upload your photo</label>
                 </div>
                 </div>

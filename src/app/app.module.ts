@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import {Router, RouterModule, Routes} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import {AngularFireModule} from '@angular/fire/compat';
+import{AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { HerosectionComponent } from './home/herosection/herosection.component';
@@ -61,6 +66,8 @@ import { authGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
+
+
 
 
 const appRoute: Routes = [
@@ -182,7 +189,9 @@ const appRoute: Routes = [
     RouterModule.forRoot(appRoute),
     GoogleMapsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [
   ],

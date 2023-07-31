@@ -8,6 +8,7 @@ import { DonorService } from '../_services/donor.service';
 import { FileHandle } from '../_models/file-handle.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AlertService } from '../_services/alert.service';
+import {AngularFireStorage} from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-donor-registration',
@@ -16,7 +17,7 @@ import { AlertService } from '../_services/alert.service';
 })
 export class DonorRegistrationComponent {
 
-    constructor(private donorService: DonorService, private userAuthService: UserAuthService, private alertService: AlertService, private router: Router, private sanitizer: DomSanitizer) {}
+    constructor(private donorService: DonorService, private userAuthService: UserAuthService, private alertService: AlertService, private router: Router, private sanitizer: DomSanitizer,private fireStorage: AngularFireStorage) {}
     
     ngOnInit(): void {
     }
@@ -53,6 +54,19 @@ export class DonorRegistrationComponent {
     navigateToHome() {
         this.userAuthService.clear();
         this.router.navigate(['/home']);
+    }
+
+ 
+
+    //image uploading
+    async onFileChange(event:any){
+        const file = event.target.files[0]
+        if(file){
+         const path =`yt/${file.name}`
+         const uploadTask =  await this.fireStorage.upload(path, file)
+         const url = await uploadTask.ref.getDownloadURL()
+         console.log(url)
+        }
     }
 
 }
