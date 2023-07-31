@@ -72,15 +72,13 @@
                 </div>
               </div>
 
-              <!-- username input -->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Email address</label>
-                <input type="email" id="form3Example3" class="form-control" name="email" ngModel required email #email="ngModel"/>
+                <label class="form-label" for="form3Example3">User Name</label>
+                <input type="text" id="form3Example3" class="form-control" name="userName" ngModel required userName #userName="ngModel"/>
                 <div>
-                  <small *ngIf="email.invalid && email.touched">insert a vaild email</small>
+                  <small *ngIf="userName.invalid && userName.touched">Insert a vaild user name</small>
                 </div>
               </div>
-
 
 
               <!-- Password input -->

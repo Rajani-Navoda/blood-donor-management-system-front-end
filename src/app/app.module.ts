@@ -60,6 +60,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { authGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
+import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
 
 
 const appRoute: Routes = [
@@ -113,6 +114,7 @@ const appRoute: Routes = [
  {path:'create-bloodbank', component:CreateBloodBankComponent},
  {path:'admin-home', component:AdminHomeComponent},
  {path:'admin-settings', component:AdminSettingsComponent},
+ {path:'delete-bloodbank',component:DeleteBloodBBankComponent},
  {path:'**',component:ErrorPageComponent}
 
 ]
@@ -171,6 +173,7 @@ const appRoute: Routes = [
     AdminComponent,
     AdminHomeComponent,
     OrganizerRegistrationComponent,
+    DeleteBloodBBankComponent,
  
   ],
   imports: [
