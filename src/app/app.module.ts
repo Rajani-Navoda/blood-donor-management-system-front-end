@@ -45,7 +45,6 @@ import { SendRemindersOrganizerComponent } from './organizer-profile/send-remind
 import { OrganizerNotificationsComponent } from './organizer-profile/organizer-notifications/organizer-notifications.component';
 import { OrganizerSettingsComponent } from './organizer-profile/organizer-settings/organizer-settings.component';
 import { ContactOrganizerComponent } from './organizer-profile/contact-organizer/contact-organizer.component';
-import { ScheduleCampaign2Component } from './schedule-campaign2/schedule-campaign2.component';
 import { BloodAvailabilityComponent } from './blood-availability/blood-availability.component';
 import { BloodbankProfileComponent } from './bloodbank-profile/bloodbank-profile.component';
 import { BloodbankHomeComponent } from './bloodbank-profile/bloodbank-home/bloodbank-home.component';
@@ -115,7 +114,6 @@ const appRoute: Routes = [
     { path: 'admin-home', component: AdminHomeComponent },
     { path: 'admin-settings', component: AdminSettingsComponent },
     { path: '**', component: ErrorPageComponent }
-
 ]
 
 
