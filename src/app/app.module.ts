@@ -101,7 +101,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         OrganizerNotificationsComponent,
         OrganizerSettingsComponent,
         ContactOrganizerComponent,
-        ScheduleCampaign2Component,
         BloodAvailabilityComponent,
         BloodbankProfileComponent,
         BloodbankHomeComponent,
@@ -114,6 +113,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         OrganizerRegistrationComponent,
         CreateBloodBankComponent,
     ],
+    
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -48,7 +48,6 @@ import { MakeAppointmentComponent } from './make-appointment/make-appointment.co
 import { ContactOrganizerComponent } from './organizer-profile/contact-organizer/contact-organizer.component';
 import { OrganizerprofileHeaderComponent } from './organizer-profile/organizerprofile-header/organizerprofile-header.component';
 import { SendRemindersOrganizerComponent } from './organizer-profile/send-reminders-organizer/send-reminders-organizer.component';
-import { ScheduleCampaign2Component } from './schedule-campaign2/schedule-campaign2.component';
 
 
 const routes: Routes = [
@@ -97,7 +96,6 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'send-reminders-organizers', component: SendRemindersOrganizerComponent },
     { path: 'organizer-contact', component: ContactOrganizerComponent },
-    { path: 'shedule-campaign2', component: ScheduleCampaign2Component },
     { path: 'blood-availability', component: BloodAvailabilityComponent },
     { path: 'campaign-requests', component: CampaignReguestsComponent },
     { path: 'donor-profiles', component: DonorProfilesComponent },
