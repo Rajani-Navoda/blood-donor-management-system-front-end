@@ -1,6 +1,6 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,66 +58,6 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { authGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
-import { UserService } from './_services/user.service';
-
-
-const appRoute: Routes = [
-    { path: '', component: HomeComponent },
-    // {path:'', redirectTo:'herosection', pathMatch:'full'},
-    { path: 'herosection', component: HerosectionComponent },
-    { path: 'add-new-donation', component: AddNewDonationComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'Signup', component: SignupComponent },
-    { path: 'donorProfile', component: DonorProfieComponent },
-    { path: 'donor-header', component: DonorprofileHeaderComponent },
-    { path: 'donation-history', component: DonationHistoryComponent },
-    { path: 'donor-registration', component: DonorRegistrationComponent },
-    { path: 'donor-registration2', component: DonorRegistration2Component },
-    { path: 'donorcard', component: DonorcardComponent },
-    { path: 'donorprofilesettings', component: DonorprofilesettingsComponent },
-    { path: 'OrganizerRegistration', component: OrganizerRegistrationComponent },
-    { path: 'organizerprofile-header', component: OrganizerprofileHeaderComponent },
-    { path: 'bloodbankprofile-header', component: BloodbankprofileHeaderComponent },
-    { path: 'admin-dashboard', component: AdminDashboardComponent },
-    { path: 'add-new-donation', component: AddNewDonationComponent },
-    { path: 'google-map', component: GoogleMapComponent },
-    { path: 'make-appointment', component: MakeAppointmentComponent },
-    { path: 'appointment-list', component: AppointmentListComponent },
-    { path: 'schedule-campaign', component: ScheduleCampaignComponent },
-    { path: 'donorprofile-home', component: DonorprofileHomeComponent },
-    { path: 'checkeligibility', component: CheckeligibilityComponent },
-    { path: 'donation-history', component: DonationHistoryComponent },
-    { path: 'body-check', component: BodyCheckComponent },
-    { path: 'cold', component: ColdComponent },
-    { path: 'heartcondition', component: HeartconditionComponent },
-    { path: 'last-donationdate', component: LastDonationDateComponent },
-    { path: 'pregnency', component: PregnencyComponent },
-    { path: 'sex', component: SexComponent },
-    { path: 'tatto', component: TattoComponent },
-    { path: 'cantdonate', component: CantdonateComponent },
-    { path: 'youcandonate', component: YoucandonateComponent },
-    { path: 'FAQ', component: FAQComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'organizer-home', component: OrganizerHomeComponent },
-    { path: 'organizer-notifications', component: OrganizerNotificationsComponent },
-    { path: 'organizer-settings', component: OrganizerSettingsComponent },
-    { path: 'send-reminders-organizers', component: SendRemindersOrganizerComponent },
-    { path: 'organizer-contact', component: ContactOrganizerComponent },
-    { path: 'shedule-campaign2', component: ScheduleCampaign2Component },
-    { path: 'blood-availability', component: BloodAvailabilityComponent },
-    { path: 'bloodbank-home', component: BloodbankHomeComponent },
-    { path: 'bloodbank-settings', component: BloodbankSettingsComponent },
-    { path: 'campaign-requests', component: CampaignReguestsComponent },
-    { path: 'donor-profiles', component: DonorProfilesComponent },
-    { path: 'create-bloodbank', component: CreateBloodBankComponent },
-    { path: 'admin-home', component: AdminHomeComponent },
-    { path: 'admin-settings', component: AdminSettingsComponent },
-    { path: '**', component: ErrorPageComponent }
-
-]
-
 
 @NgModule({
     declarations: [
@@ -178,7 +118,7 @@ const appRoute: Routes = [
     imports: [
         BrowserModule,
         AppRoutingModule,
-        RouterModule.forRoot(appRoute),
+        RouterModule,
         GoogleMapsModule,
         HttpClientModule,
         FormsModule,                             
