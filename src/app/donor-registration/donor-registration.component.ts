@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../_services/user.service';
 import { UserAuthService } from '../_services/user-auth.service';
 import { Router } from '@angular/router';
-import jwt_decode from 'jwt-decode';
 import { DonorService } from '../_services/donor.service';
-import { FileHandle } from '../_models/file-handle.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AlertService } from '../_services/alert.service';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
@@ -32,24 +29,11 @@ export class DonorRegistrationComponent {
                 this.alertService.alertWithSuccess("Donor registered successfully!");
             },
             (error)=>{
-                this.alertService.alertWithError();
+                this.alertService.alertWithError("Something Went Wrong!");
                 console.log(error);
             }
         );
     }
-
-    // onFileSelected(event: any) {
-    //     if(event.target.files) {
-    //         const file: File =  event.target.files[0];
-
-    //         const fileHandle: FileHandle {
-    //             file: file,
-    //             url: this.sanitizer.byPassSecurityTrustUrl(
-    //                 window.URL.createObjectURL(file)
-    //             )
-    //         }
-    //     }
-    // }
 
     navigateToHome() {
         this.userAuthService.clear();

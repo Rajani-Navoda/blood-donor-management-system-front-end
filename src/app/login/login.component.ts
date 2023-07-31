@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from '../_services/user.service';
 import { UserAuthService } from '../_services/user-auth.service';
 import { Router } from '@angular/router';
+import { AlertService } from '../_services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService, private userAuthService: UserAuthService, private router: Router) {}
+  constructor(private userService: UserService, private userAuthService: UserAuthService, private alertService: AlertService, private router: Router) {}
     
     ngOnInit(): void {
     }
@@ -33,15 +34,19 @@ export class LoginComponent implements OnInit {
                     }
                 } else if (userType === 'organizer') {
                     if (isFirstLogin === true) {
-                        this.router.navigate(['/organizer-profile-home']);
+                        this.router.navigate(['/organizer-registration']);
                     } else {
                         this.router.navigate(['/organizer-profile-home']);
                     }
+                } else if (userType === 'admin') {
+                    this.router.navigate(['/admin-home']);
+                } else if (userType === 'blood-bank') {
+                    this.router.navigate(['/bloodbank-home']);
                 }
             },
 
             (error)=>{
-                console.log(error);
+                this.alertService.alertWithError("Incorrect Username and Password");
             }
         );
     }

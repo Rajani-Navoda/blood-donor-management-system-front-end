@@ -1,136 +1,155 @@
 <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
-    <style>
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
       .cascading-right {
-        margin-right: -50px;
+        margin-right: 0;
       }
-  
-      @media (max-width: 991.98px) {
-        .cascading-right {
-          margin-right: 0;
-        }
-      }
-    </style>
-  
-    <!-- Jumbotron -->
-    <div class="container py-4">
-      <div class="row g-0 align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card cascading-right" style="
-              background: hsla(0, 0%, 100%, 0.55);
-              backdrop-filter: blur(30px);
-              ">
-            <div class="card-body p-5 shadow-5 text-center">
-              <h2 class="fw-bold mb-5">Add a blood bank</h2>
-              <form>
-               
-                <!-- name -->
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Blood bank name</label>
-                </div>
+    }
+  </style>
 
-                <!-- name -->
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Registration number</label>
-                </div>
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div
+          class="card cascading-right"
+          style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+          "
+        >
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Add a blood bank</h2>
+            <form (ngSubmit)="createBloodBank(bloodBankCreationForm)"
+            #bloodBankCreationForm="ngForm">
+              <!-- name -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="bankName"
+                  >Blood Bank Name</label
+                >
+                <input type="text" id="bankName" class="form-control" name="bankName" ngModel required #bankName="ngModel" />
+                <small *ngIf="bankName.invalid && bankName.touched">Enter the name of the Blood Bank.</small>
+              </div>
 
-                <!-- 2 column grid layout with text inputs for the district and the zip code -->
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                       
-                        <input
-                          type="text"
-                          formControlName="firstName"
-                          id="form3Example1"
-                          class="form-control"
-                       
-                        />
-                        <label class="form-label" for="form3Example1">District</label >
-                        
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        
-                        <input
-                          type="text"
-                          formControlName="lastName"
-                          id="form3Example2"
-                          class="form-control"
-                        
-                        />
-                        <label class="form-label" for="form3Example2"
-                          >Zip code</label
-                        >
-                       
-                      </div>
-                    </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="address"
+                  >Address</label
+                >
+                <input type="text" id="address" class="form-control" name="address" ngModel required #address="ngModel" />
+                <small *ngIf="address.invalid && address.touched">Enter the address of the Blood Bank.</small>
+              </div>
+
+              <!-- 2 column grid layout with text inputs for the district and the zip code -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="district">District</label
+                    >
+                    <input
+                      type="text"
+                      id="district"
+                      class="form-control"
+                      name="district" ngModel required #district="ngModel"
+                    />
+                    <small *ngIf="district.invalid && district.touched">Enter the district of the Blood Bank.</small>
                   </div>
-                  <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3" class="form-control" />
-                    <label class="form-label" for="form3Example3">Email address</label>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                       
-                        <input
-                          type="text"
-                          formControlName="firstName"
-                          id="form3Example1"
-                          class="form-control"
-                        
-                        />
-                        <label class="form-label" for="form3Example1">Contact</label >
-                        
-                      </div>
-                    </div>
-                    </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="text" id="form3Example3" class="form-control" />
-                    <label class="form-label" for="form3Example3">Choose the location</label>
-                  </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label>
                 </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4" class="form-control" />
-                    <label class="form-label" for="form3Example4">comfirm Password</label>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="postalCode"
+                    >Postal Code</label
+                    >
+                    <input
+                      type="text"
+                      id="postalCode"
+                      class="form-control"
+                      name="postalCode" ngModel required #postalCode="ngModel"
+                    />
+                    <small *ngIf="postalCode.invalid && postalCode.touched">Enter the Postal Code of the Blood Bank.</small>
+                  </div>
                 </div>
-  
-  
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-danger btn-block mb-4" style="width: 300px;">
-                  Create
-                </button>
-                
-  
-                <!-- Register buttons -->
-                
-              </form>
-              
-            </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="email"
+                >Email address</label>
+                <input type="email" id="email" class="form-control" name="email" ngModel required #email="ngModel"/>
+                <small *ngIf="email.invalid && email.touched">Enter the email of the Blood Bank.</small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="contactNumber"
+                >Contact Number</label>
+                <input type="tel" id="contactNumber" class="form-control" name="contactNumber" ngModel required #contactNumber="ngModel"/>
+                <small *ngIf="contactNumber.invalid && contactNumber.touched">Enter the contact number of the Blood Bank.</small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="userName">User Name</label>
+                <input
+                  type="text"
+                  id="userName"
+                  class="form-control"
+                  name="userName" ngModel required #userName="ngModel"
+                />
+                <small *ngIf="userName.invalid && userName.touched">Enter the user name of the Blood Bank.</small>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  type="password"
+                  id="passsword"
+                  class="form-control"
+                  name="password" ngModel required #password="ngModel"
+                />
+                <small *ngIf="password.invalid && password.touched">Enter the password of the Blood Bank.</small>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="confirmPassword"
+                >Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  class="form-control"
+                  name="confirmPassword" ngModel required #confirmPassword="ngModel"
+                />
+                <small *ngIf="confirmPassword.invalid && confirmPassword.touched">Confirm the password.</small>
+              </div>
+
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn btn-danger btn-block mb-4"
+                style="width: 300px"
+                [disabled]="!bloodBankCreationForm.valid"
+              >
+                Create
+              </button>
+
+              <!-- Register buttons -->
+            </form>
           </div>
         </div>
-  
-        <div class="col-lg-6 mb-5 mb-lg-0">
-            <img
-              src="../assets/images/pexels-charliehelen-robinson-4531304.jpg"
-              class="w-100 rounded-4 shadow-4"
-              alt=""
-            />
-          </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="../assets/images/pexels-charliehelen-robinson-4531304.jpg"
+          class="w-100 rounded-4 shadow-4"
+          alt=""
+        />
       </div>
     </div>
-    <!-- Jumbotron -->
-  </section>
-  <!-- Section: Design Block -->
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
