@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import {Router, RouterModule, Routes} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ChartModule } from 'angular-highcharts';
+
+
 
 import {AngularFireModule} from '@angular/fire/compat';
 import{AngularFireStorageModule} from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { HerosectionComponent } from './home/herosection/herosection.component';
@@ -66,6 +68,7 @@ import { authGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
+import { ReportsComponent } from './reports/reports.component';
 
 
 
@@ -122,6 +125,7 @@ const appRoute: Routes = [
  {path:'admin-home', component:AdminHomeComponent},
  {path:'admin-settings', component:AdminSettingsComponent},
  {path:'delete-bloodbank',component:DeleteBloodBBankComponent},
+ {path:'reports',component:ReportsComponent},
  {path:'**',component:ErrorPageComponent}
 
 ]
@@ -181,6 +185,7 @@ const appRoute: Routes = [
     AdminHomeComponent,
     OrganizerRegistrationComponent,
     DeleteBloodBBankComponent,
+    ReportsComponent,
  
   ],
   imports: [
@@ -191,7 +196,8 @@ const appRoute: Routes = [
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    ChartModule
   ],
   providers: [
   ],
