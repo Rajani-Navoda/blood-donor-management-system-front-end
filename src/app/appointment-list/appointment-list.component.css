@@ -47,4 +47,27 @@
   .toggle-sidebar .sidebar {
     left: -300px;
   }
+
+  .no-data-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; 
+    border: 1px solid #ccc; /* Border for the container */
+    position: relative;
+  }
+
+  .no-data-message {
+    position: absolute;
+    background-color: #DC143C;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
 }

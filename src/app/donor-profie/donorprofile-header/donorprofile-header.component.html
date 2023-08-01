@@ -54,7 +54,7 @@
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/images/WhatsApp Image 2023-05-21 at 7.35.27 AM.jpeg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Rajani Navoda</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{firstName}} {{lastName}}</span>
             
           </a>
           <div class="dropdown-content" >
@@ -66,7 +66,7 @@
               <i class="bi bi-gear"></i>
               Account Settings
             </a>
-            <a href="#">
+            <a (click)="navigateToHome()">
               <i class="bi bi-box-arrow-right"></i>
               Sign Out
             </a>
@@ -94,7 +94,7 @@
           <i class="bi bi-menu-button-wide"></i><span>Home</span>
         </a>
 
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" routerLink="../donorcard">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" routerLink="../donor-card">
             <i class="bi bi-list"></i><span>Donor Card</span>
         </a>
 
@@ -151,7 +151,7 @@
       </li><!-- End Login as a organizer Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" routerLink="../home">
+        <a class="nav-link collapsed" (click)="navigateToHome()">
           <i class="bi bi-box-arrow-right"></i>
           <span>Log Out</span>
         </a>

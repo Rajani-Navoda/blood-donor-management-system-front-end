@@ -374,7 +374,41 @@
                   >
                 </div>
               </div>
-  
+            </div>
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="specialConditions"
+                >Special Conditions</label
+              >
+              <input
+                type="text"
+                id="specialConditions"
+                class="form-control"
+                name="specialConditions"
+                ngModel
+                #specialConditions="ngModel"
+              />
+            </div>
+            <br />
+
+            <!--Upload the photo-->
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input
+                  type="file"
+                  id="imageUrl"
+                  name="imageUrl"
+                  accept="*.png.jpg"
+                  class="form-control"
+                  (click)="onFileChange($event)"
+                  ngModel
+                  required
+                  #imageUrl="ngModel"                />
+                <label class="form-label" for="imageUrl"
+                  >Upload your photo</label
+                >
+              </div>
+            </div>  
               <div class="container">
                 <div class="row">
                   <div class="col-md-4">

@@ -17,9 +17,9 @@
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title">R.A.N. Gunawardhana</h5>
+                        <h5 class="card-title">{{ firstName }} {{ lastName }}</h5>
                         <p class="card-text">Carry your donor card proudly and save lives with every drop of blood.</p>
-                        <p class="card-text"><small class="text-muted">Blood Group: <span>A+</span></small></p>
+                        <p class="card-text"><small class="text-muted">Blood Group: <span>{{ bloodGroup }}</span></small></p>
                       </div>
                     </div>
                   </div>
@@ -39,13 +39,13 @@
                 <div class="card mb-3" style="max-width: 540px;">
                   <div class="row no-gutters">
                     <div class="col-md-4">
-                      <img src="assets/images/qr sample.png" alt="QR Sample" class="card-img">
+                      <img src="assets/images/QR_Codes/{{ path }}" alt="QR Sample" class="card-img">
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
                         <h5 class="card-title">QR - code</h5>
                         <p class="card-text">Scan here</p>
-                        <p class="card-text"><small class="text-muted">Reg.No: <span>AP-1234-123456</span></small></p>
+                        <p class="card-text"><small class="text-muted">Reg.No: <span>{{ registrationNumber}}</span></small></p>
                       </div>
                     </div>
                   </div>

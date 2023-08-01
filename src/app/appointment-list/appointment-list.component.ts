@@ -10,6 +10,7 @@ import { CampaignService } from '../_services/campaign.service';
 })
 export class AppointmentListComponent implements OnInit{
 
+    public campaignsPresent: boolean;
     public campaigns: [];
 
     constructor(private campaignService: CampaignService, private alertService: AlertService, private router: Router) { }
@@ -19,8 +20,10 @@ export class AppointmentListComponent implements OnInit{
         this.campaignService.getCampaignsByOrganizer().subscribe(
             (response: any) => {
                 if (response && response.length > 0) {
+                    this.campaignsPresent = true;
                     this.campaigns = response;
-                    console.log(this.campaigns);
+                } else {
+                    this.campaignsPresent = false;
                 }
             }
         )
