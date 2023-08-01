@@ -48,6 +48,7 @@ import { MakeAppointmentComponent } from './make-appointment/make-appointment.co
 import { ContactOrganizerComponent } from './organizer-profile/contact-organizer/contact-organizer.component';
 import { OrganizerprofileHeaderComponent } from './organizer-profile/organizerprofile-header/organizerprofile-header.component';
 import { SendRemindersOrganizerComponent } from './organizer-profile/send-reminders-organizer/send-reminders-organizer.component';
+import { BloodBankListComponent } from './blood-bank-list/blood-bank-list.component';
 
 
 const routes: Routes = [
@@ -55,16 +56,17 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'donor-profile-home', component: DonorprofileHomeComponent, canActivate: [authGuard], data: { userTypes: ['donor']} },
-    { path: 'donor-registration', component: DonorRegistrationComponent, canActivate: [authGuard], data: { userTypes: ['donor']} },
-    { path: 'organizer-profile-home', component: OrganizerHomeComponent, canActivate: [authGuard], data: { userTypes: ['organizer']} },
-    { path: 'organizer-registration', component: OrganizerRegistrationComponent, canActivate: [authGuard], data: { userTypes: ['organizer']} },
-    { path: 'organizer-notifications', component: OrganizerNotificationsComponent, canActivate: [authGuard], data: { userTypes: ['organizer']} },
-    { path: 'organizer-settings', component: OrganizerSettingsComponent, canActivate: [authGuard], data: { userTypes: ['organizer']} },
-    { path: 'schedule-campaign', component: ScheduleCampaignComponent, canActivate: [authGuard], data: { userTypes: ['organizer']} },
-    { path: 'admin-home', component: AdminHomeComponent, canActivate: [authGuard], data: { userTypes: ['admin'] } },
-    { path: 'admin-settings', component: AdminSettingsComponent, canActivate: [authGuard], data: { userTypes: ['admin'] } },
-    { path: 'create-bloodbank', component: CreateBloodBankComponent, canActivate: [authGuard], data: { userTypes: ['admin'] } },
+    { path: 'donor-profile-home', component: DonorprofileHomeComponent, canActivate: [authGuard], data: { userTypes: ['donor'] }},
+    { path: 'donor-registration', component: DonorRegistrationComponent, canActivate: [authGuard], data: { userTypes: ['donor'] }},
+    { path: 'organizer-profile-home', component: OrganizerHomeComponent, canActivate: [authGuard], data: { userTypes: ['organizer'] }},
+    { path: 'organizer-registration', component: OrganizerRegistrationComponent, canActivate: [authGuard], data: { userTypes: ['organizer'] }},
+    { path: 'organizer-notifications', component: OrganizerNotificationsComponent, canActivate: [authGuard], data: { userTypes: ['organizer'] }},
+    { path: 'organizer-settings', component: OrganizerSettingsComponent, canActivate: [authGuard], data: { userTypes: ['organizer'] }},
+    { path: 'schedule-campaign', component: ScheduleCampaignComponent, canActivate: [authGuard], data: { userTypes: ['organizer'] }},
+    { path: 'admin-home', component: AdminHomeComponent, canActivate: [authGuard], data: { userTypes: ['admin'] }},
+    { path: 'admin-settings', component: AdminSettingsComponent, canActivate: [authGuard], data: { userTypes: ['admin'] }},
+    { path: 'create-bloodbank', component: CreateBloodBankComponent, canActivate: [authGuard], data: { userTypes: ['admin'] }},
+    { path: 'blood-bank-list', component: BloodBankListComponent, canActivate: [authGuard], data: { userTypes: ['admin'] }},
     { path: 'bloodbank-home', component: BloodbankHomeComponent, canActivate: [authGuard], data: { userTypes: ['blood-bank'] } },
     { path: 'bloodbank-settings', component: BloodbankSettingsComponent, canActivate: [authGuard], data: { userTypes: ['blood-bank'] } },
     { path: 'herosection', component: HerosectionComponent },

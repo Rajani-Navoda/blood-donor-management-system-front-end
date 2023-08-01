@@ -57,6 +57,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BloodBankListComponent } from './blood-bank-list/blood-bank-list.component';
 
 @NgModule({
     declarations: [
@@ -112,6 +113,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         AdminHomeComponent,
         OrganizerRegistrationComponent,
         CreateBloodBankComponent,
+        BloodBankListComponent
     ],
     
     imports: [

@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { Router } from '@angular/router';
+import { AlertService } from '../_services/alert.service';
+import { CampaignService } from '../_services/campaign.service';
+import Swal from 'sweetalert2';
+import { AppointmentService } from '../_services/appointment.service';
 
 @Component({
   selector: 'app-google-map',
@@ -7,30 +12,43 @@ import { MapInfoWindow, MapMarker } from '@angular/google-maps';
   styleUrls: ['./google-map.component.css']
 })
 export class GoogleMapComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
+    public campaignsPresent: boolean;
+    public campaigns: [];
+    public approvedCampaignId: number;
+    
+    constructor(private campaignService: CampaignService, private appoinmentService: AppointmentService, private alertService: AlertService, private router: Router) { }
 
-  center: google.maps.LatLngLiteral = {lat: 7, lng: 80};
-  markerPositions: google.maps.LatLngLiteral[] = [];
-  zoom = 10;
+    ngOnInit(): void {
+        this.campaignService.getNotAppointedCampaigns().subscribe(
+            (response: any) => {
+                if (response && response.length > 0) {
+                    console.log(response);
+                    this.campaigns = response;
+                    this.campaignsPresent = true;
+                } else {
+                    this.campaignsPresent = false;
+                }
+            }
+        )
+    }
 
-  addMarker(event: google.maps.MapMouseEvent) {
-    if(event.latLng != null)
-    this.markerPositions.push(event.latLng.toJSON());
-  }
-
-  openInfoWindow(marker: MapMarker) {
-    if(this.infoWindow != undefined)
-    this.infoWindow.open(marker);
-  }
-
-  displayForm = false;
-
-  showForm() {
-    this.displayForm = true;
-  }
+    makeAppointment(campaignId: number) {
+        Swal.fire({
+            title: 'Do you want to make an appointment?',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+          }).then((result) => {
+            if (result.isConfirmed) {
+                this.appoinmentService.createAppointment(campaignId).subscribe(
+                    (response) => {
+                        Swal.fire('Request Sent!', '', 'success');
+                        this.router.navigate(['/google-map']).then(() => {
+                            window.location.reload()});
+                    }
+                )
+            }
+          })
+    }
 
 }

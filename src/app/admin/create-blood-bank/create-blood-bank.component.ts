@@ -17,6 +17,7 @@ export class CreateBloodBankComponent {
     createBloodBank(bloodBankCreationForm: NgForm) {
         
         var formData = bloodBankCreationForm.value;
+        console.log(formData);
 
         this.bloodBankService.createBloodBank(formData).subscribe(
             (response: any)=>{

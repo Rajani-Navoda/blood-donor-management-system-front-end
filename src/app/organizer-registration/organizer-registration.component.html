@@ -73,33 +73,6 @@
             <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <label class="form-label" for="bloodBank"
-                    >Nearest Blood Bank</label
-                  >
-                  <select
-                    name="bloodBank"
-                    id="bloodBank"
-                    class="form-control"
-                    ngModel
-                    required
-                    #bloodBank="ngModel"
-                  >
-                    <option value="">Select the Nearest Blood Bank</option>
-                    <option *ngFor="let bank of bloodBanks" [ngValue]="bank">
-                      {{ bank["user"]["firstName"] }}
-                    </option>
-                  </select>
-
-                  <div>
-                    <small *ngIf="bloodBank.invalid && bloodBank.touched"
-                      >Enter your Blood Group</small
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
                   <label class="form-label" for="nic">NIC Number</label>
                   <input
                     type="text"
