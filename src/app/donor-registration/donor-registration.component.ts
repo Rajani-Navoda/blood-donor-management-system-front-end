@@ -20,6 +20,7 @@ export class DonorRegistrationComponent {
     constructor(private donorService: DonorService, private userAuthService: UserAuthService, private alertService: AlertService, private router: Router, private sanitizer: DomSanitizer,private fireStorage: AngularFireStorage) {}
     
     ngOnInit(): void {
+        
     }
 
     donorRegistration(donorRegistrationForm: NgForm) {
@@ -32,7 +33,7 @@ export class DonorRegistrationComponent {
                 this.alertService.alertWithSuccess("Donor registered successfully!");
             },
             (error)=>{
-                this.alertService.alertWithError();
+               // this.alertService.alertWithError();
                 console.log(error);
             }
         );
