@@ -14,6 +14,7 @@ export class DonorprofilesettingsComponent implements OnInit{
 
     public firstName: string = "";
     public lastName: string = "";
+    public registrationNumber: string = "";
     public fullName: string= "";
     public nic: string= "";
     public dob: string = "";
@@ -35,8 +36,10 @@ export class DonorprofilesettingsComponent implements OnInit{
     ngOnInit(): void {
             
         this.donorService.getDetailsByUserName().subscribe((response:any)=>{
+
             this.firstName = response.user.firstName ? response.user.firstName : "";
             this.lastName = response.user.lastName ? response.user.lastName : "";
+            this.registrationNumber = response.registrationNumber ? response.registrationNumber : "";
             this.fullName = response.fullName ?response.fullName : "";
             this.nic = response.nic ? response.nic : "";
             this.dob = response.dob ? response.dob : "";
@@ -68,9 +71,7 @@ export class DonorprofilesettingsComponent implements OnInit{
             (error)=>{
                 this.alertService.alertWithError("Something Went Wrong!");
             }
-        );
-
-        
+        ); 
     }
 }
 

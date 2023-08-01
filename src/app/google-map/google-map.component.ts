@@ -15,7 +15,6 @@ export class GoogleMapComponent implements OnInit {
 
     public campaignsPresent: boolean;
     public campaigns: [];
-    public approvedCampaignId: number;
     
     constructor(private campaignService: CampaignService, private appoinmentService: AppointmentService, private alertService: AlertService, private router: Router) { }
 

@@ -16,63 +16,74 @@
       <br />
     </div>
     <!-- End Page Title -->
+    <div *ngIf="campaignsPresent; else noDataMsg">
+      <section class="section" *ngFor="let campDonor of campaigns">
+        <br />
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <p>
+                  <strong>Blood Bank: </strong
+                  >{{ campDonor["campaign"]["bloodBank"]["user"]["firstName"] }}
+                </p>
+                <p>
+                  <strong>Date: </strong>{{ campDonor["campaign"]["date"] }}
+                </p>
+                <p>
+                  <strong>Start Time: </strong
+                  >{{ campDonor["campaign"]["startTime"] }}
+                </p>
+                <p>
+                  <strong>End Time: </strong
+                  >{{ campDonor["campaign"]["endTime"] }}
+                </p>
+                <p>
+                  <strong>Location: </strong
+                  >{{ campDonor["campaign"]["location"] }}
+                </p>
 
-    <section class="section" *ngFor="let campDonor of campaigns">
-      <br />
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <p>
-                <strong>Blood Bank: </strong
-                >{{ campDonor["campaign"]["bloodBank"]["user"]["firstName"] }}
-              </p>
-              <p><strong>Date: </strong>{{ campDonor["campaign"]["date"] }}</p>
-              <p>
-                <strong>Start Time: </strong
-                >{{ campDonor["campaign"]["startTime"] }}
-              </p>
-              <p>
-                <strong>End Time: </strong
-                >{{ campDonor["campaign"]["endTime"] }}
-              </p>
-              <p>
-                <strong>Location: </strong
-                >{{ campDonor["campaign"]["location"] }}
-              </p>
-
-              <table class="table datatable">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Registration Number</th>
-                    <th scope="col">Full name</th>
-                    <th scope="col">Blood group</th>
-                    <th scope="col">Date of Birth</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Weight</th>
-                    <th scope="col">Contact number</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let donor of campDonor['donors']; let i = index">
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ donor["registrationNumber"] }}</td>
-                    <td>{{ donor["fullName"] }}</td>
-                    <td>{{ donor["bloodGroup"] }}</td>
-                    <td>{{ donor["dob"] }}</td>
-                    <td>{{ donor["gender"] }}</td>
-                    <td>{{ donor["height"] }}</td>
-                    <td>{{ donor["weight"] }}</td>
-                    <td>{{ donor["contactMobile"] }}</td>
-                  </tr>
-                </tbody>
-              </table>
+                <table class="table datatable">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Registration Number</th>
+                      <th scope="col">Full name</th>
+                      <th scope="col">Blood group</th>
+                      <th scope="col">Date of Birth</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Height</th>
+                      <th scope="col">Weight</th>
+                      <th scope="col">Contact number</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let donor of campDonor['donors']; let i = index"
+                    >
+                      <th scope="row">{{ i + 1 }}</th>
+                      <td>{{ donor["registrationNumber"] }}</td>
+                      <td>{{ donor["fullName"] }}</td>
+                      <td>{{ donor["bloodGroup"] }}</td>
+                      <td>{{ donor["dob"] }}</td>
+                      <td>{{ donor["gender"] }}</td>
+                      <td>{{ donor["height"] }}</td>
+                      <td>{{ donor["weight"] }}</td>
+                      <td>{{ donor["contactMobile"] }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+    </div>
+
+    <ng-template #noDataMsg>
+      <div class="no-data-card">
+        <div class="no-data-message">No Data Available</div>
       </div>
-    </section>
+    </ng-template>
   </main>
 </body>

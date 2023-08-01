@@ -21,8 +21,14 @@ export class OrganizerService {
     constructor(private httpClient: HttpClient, private userAuthService: UserAuthService) { }
 
     public organizerRegistration(data:any) {
-
         return this.httpClient.post(this.url + "/organizer/addOrganizer/" + this.userName, data,  {headers: this.requestHeader});
+    }
 
+    public getDetailsByUserName() {
+        return this.httpClient.get(this.url + "/organizer/getOrganizerByUserName/" + this.userName, {headers: this.requestHeader});
+    }
+
+    public updateOrganizer(data: any) {
+        return this.httpClient.post(this.url + "/organizer/updateOrganizer/" + this.userName, data,  {headers: this.requestHeader});
     }
 }

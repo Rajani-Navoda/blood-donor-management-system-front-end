@@ -365,6 +365,7 @@
                   name="imageUrl"
                   accept="*.png.jpg"
                   class="form-control"
+                  (click)="onFileChange($event)"
                   ngModel
                   required
                   #imageUrl="ngModel"                />

@@ -39,4 +39,14 @@ export class DonorRegistrationComponent {
         this.router.navigate(['/home']);
     }
 
+    async onFileChange(event:any){
+        const file = event.target.files[0]
+        // if(file){
+        //   const path = `yt/${file.name}`
+        //   const uploadTask =await this.fireStorage.upload(path,file)
+        //   const url = await uploadTask.ref.getDownloadURL()
+        //   console.log(url)
+        // }
+      }
+
 }

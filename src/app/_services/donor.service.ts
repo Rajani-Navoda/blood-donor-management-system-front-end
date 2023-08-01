@@ -33,4 +33,8 @@ export class DonorService {
     public getDetailsByUserName() {
         return this.httpClient.get(this.url + "/donor/getDonorByUserName/" + this.userName, {headers: this.requestHeader});
     }
+
+    public getPathToQrCode() {
+        return this.httpClient.get(this.url + "/donor/getPathToQrCode/" + this.userName, {headers: this.requestHeader, responseType: 'text'});
+    }
 }
