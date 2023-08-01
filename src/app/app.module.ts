@@ -3,6 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { ChartModule } from 'angular-highcharts';
+
+import {AngularFireModule} from '@angular/fire/compat';
+import{AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { HerosectionComponent } from './home/herosection/herosection.component';
@@ -58,6 +65,10 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
+import { ReportsComponent } from './reports/reports.component';
+import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -112,6 +123,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         AdminHomeComponent,
         OrganizerRegistrationComponent,
         CreateBloodBankComponent,
+
+        ReportsComponent,
+        DeleteBloodBBankComponent
+        
+ 
     ],
     
     imports: [
@@ -121,7 +137,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         GoogleMapsModule,
         HttpClientModule,
         FormsModule,                             
-        ReactiveFormsModule 
+        ReactiveFormsModule ,
+        ChartModule
+
     ],
     providers: [
     ],
