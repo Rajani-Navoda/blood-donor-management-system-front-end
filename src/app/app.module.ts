@@ -1,15 +1,13 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {Router, RouterModule, Routes} from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ChartModule } from 'angular-highcharts';
 
-
-
 import {AngularFireModule} from '@angular/fire/compat';
 import{AngularFireStorageModule} from '@angular/fire/compat/storage';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { HerosectionComponent } from './home/herosection/herosection.component';
@@ -64,143 +62,83 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { authGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
-import { UserService } from './_services/user.service';
-import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
 import { ReportsComponent } from './reports/reports.component';
-
-
-
-
-const appRoute: Routes = [
-{path:'', component:HomeComponent},
- // {path:'', redirectTo:'herosection', pathMatch:'full'},
- {path:'herosection', component: HerosectionComponent},
- {path:'add-new-donation', component: AddNewDonationComponent},
- {path:'admin-dashboard', component: AdminDashboardComponent},
- {path:'login', component:LoginComponent},
- {path:'Signup',component:SignupComponent},
- {path:'donorProfile',component:DonorProfieComponent},
- {path:'donor-header', component:DonorprofileHeaderComponent},
- {path:'donation-history', component:DonationHistoryComponent},
- {path:'donor-registration', component:DonorRegistrationComponent},
- {path:'donor-registration2',component:DonorRegistration2Component},
- {path:'donorcard', component:DonorcardComponent},
- {path:'donorprofilesettings', component:DonorprofilesettingsComponent},
- {path:'OrganizerRegistration',component:OrganizerRegistrationComponent},
- {path:'organizerprofile-header',component:OrganizerprofileHeaderComponent},
- {path:'bloodbankprofile-header',component:BloodbankprofileHeaderComponent},
- {path:'admin-dashboard', component:AdminDashboardComponent},
- {path:'add-new-donation', component:AddNewDonationComponent},
- {path:'google-map', component:GoogleMapComponent},
- {path:'make-appointment', component:MakeAppointmentComponent},
- {path:'appointment-list', component:AppointmentListComponent},
- {path:'schedule-campaign', component:ScheduleCampaignComponent},
- {path:'donorprofile-home', component:DonorprofileHomeComponent},
- {path:'checkeligibility', component:CheckeligibilityComponent},
- {path:'donation-history',component:DonationHistoryComponent},
- {path:'body-check', component:BodyCheckComponent},
- {path:'cold', component:ColdComponent},
- {path:'heartcondition', component:HeartconditionComponent},
- {path:'last-donationdate',component:LastDonationDateComponent},
- {path:'pregnency', component:PregnencyComponent},
- {path:'sex',component:SexComponent},
- {path:'tatto',component:TattoComponent},
- {path:'cantdonate', component:CantdonateComponent},
- {path:'youcandonate', component:YoucandonateComponent},
- {path:'FAQ',component:FAQComponent},
- {path:'contact', component:ContactComponent},
- {path:'organizer-home', component:OrganizerHomeComponent},
- {path:'organizer-notifications', component:OrganizerNotificationsComponent},
- {path:'organizer-settings', component:OrganizerSettingsComponent},
- {path:'send-reminders-organizers',component:SendRemindersOrganizerComponent},
- {path:'organizer-contact', component:ContactOrganizerComponent},
- {path:'blood-availability', component:BloodAvailabilityComponent},
- {path:'bloodbank-home', component:BloodbankHomeComponent},
- {path:'bloodbank-settings', component:BloodbankSettingsComponent},
- {path:'campaign-requests', component:CampaignReguestsComponent},
- {path:'donor-profiles', component:DonorProfilesComponent},
- {path:'create-bloodbank', component:CreateBloodBankComponent},
- {path:'admin-home', component:AdminHomeComponent},
- {path:'admin-settings', component:AdminSettingsComponent},
- {path:'delete-bloodbank',component:DeleteBloodBBankComponent},
- {path:'reports',component:ReportsComponent},
- {path:'**',component:ErrorPageComponent}
-
-]
-
+import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HerosectionComponent,
-    LoginComponent,
-    SignupComponent,
-    DonorRegistrationComponent,
-    DonorRegistration2Component,
-    DonorprofileHeaderComponent,
-    DonorcardComponent,
-    DonorprofilesettingsComponent,
-    DonationHistoryComponent,
-    AddNewDonationComponent,
-    OrganizerprofileHeaderComponent,
-    BloodbankprofileHeaderComponent,
-    AdminDashboardComponent,
-    HomeComponent,
-    DonorProfieComponent,
-    GoogleMapComponent,
-    MakeAppointmentComponent,
-    AppointmentListComponent,
-    ScheduleCampaignComponent,
-    ErrorPageComponent,
-    DonorprofileHomeComponent,
-    CheckeligibilityComponent,
-    HeartconditionComponent,
-    PregnencyComponent,
-    LastDonationDateComponent,
-    BodyCheckComponent,
-    TattoComponent,
-    SexComponent,
-    ColdComponent,
-    CantdonateComponent,
-    YoucandonateComponent,
-    FAQComponent,
-    ContactComponent,
-    OrganizerProfileComponent,
-    OrganizerHomeComponent,
-    SendRemindersOrganizerComponent,
-    OrganizerNotificationsComponent,
-    OrganizerSettingsComponent,
-    ContactOrganizerComponent,
-    BloodAvailabilityComponent,
-    BloodbankProfileComponent,
-    BloodbankHomeComponent,
-    CampaignReguestsComponent,
-    DonorProfilesComponent,
-    BloodbankSettingsComponent,
-    AdminSettingsComponent,
-    AdminComponent,
-    AdminHomeComponent,
-    OrganizerRegistrationComponent,
-    DeleteBloodBBankComponent,
-    ReportsComponent,
- 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(appRoute),
-    GoogleMapsModule,
-    HttpClientModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule,
-    ChartModule
-  ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HerosectionComponent,
+        LoginComponent,
+        SignupComponent,
+        DonorRegistrationComponent,
+        DonorRegistration2Component,
+        DonorprofileHeaderComponent,
+        DonorcardComponent,
+        DonorprofilesettingsComponent,
+        DonationHistoryComponent,
+        AddNewDonationComponent,
+        OrganizerprofileHeaderComponent,
+        BloodbankprofileHeaderComponent,
+        AdminDashboardComponent,
+        HomeComponent,
+        DonorProfieComponent,
+        GoogleMapComponent,
+        MakeAppointmentComponent,
+        AppointmentListComponent,
+        ScheduleCampaignComponent,
+        ErrorPageComponent,
+        DonorprofileHomeComponent,
+        CheckeligibilityComponent,
+        HeartconditionComponent,
+        PregnencyComponent,
+        LastDonationDateComponent,
+        BodyCheckComponent,
+        TattoComponent,
+        SexComponent,
+        ColdComponent,
+        CantdonateComponent,
+        YoucandonateComponent,
+        FAQComponent,
+        ContactComponent,
+        OrganizerProfileComponent,
+        OrganizerHomeComponent,
+        SendRemindersOrganizerComponent,
+        OrganizerNotificationsComponent,
+        OrganizerSettingsComponent,
+        ContactOrganizerComponent,
+        BloodAvailabilityComponent,
+        BloodbankProfileComponent,
+        BloodbankHomeComponent,
+        CampaignReguestsComponent,
+        DonorProfilesComponent,
+        BloodbankSettingsComponent,
+        AdminSettingsComponent,
+        AdminComponent,
+        AdminHomeComponent,
+        OrganizerRegistrationComponent,
+        CreateBloodBankComponent,
+        ReportsComponent,
+        DeleteBloodBBankComponent
+        
+       
+    ],
+    
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        GoogleMapsModule,
+        HttpClientModule,
+        FormsModule,                             
+        ReactiveFormsModule ,
+        ChartModule
+
+    ],
+    providers: [
+    ],
+    bootstrap: [AppComponent]
+
 })
 export class AppModule { }

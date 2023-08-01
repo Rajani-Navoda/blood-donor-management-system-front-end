@@ -22,7 +22,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5">Donor Registration Form</h2>
-          <h4 class="fw-bold mb-5">personal information</h4>
+          <h4 class="fw-bold mb-5">Personal Information</h4>
 
           <form
             (ngSubmit)="donorRegistration(donorRegistrationForm)"
@@ -211,28 +211,6 @@
               </div>
             </div>
 
-            <!-- Email input -->
-            <!-- <div class="form-outline mb-4">
-              <label class="form-label" for="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                name="email"
-                ngModel
-                required
-                email
-                #email="ngModel"
-              />
-              <div>
-                <small *ngIf="email.invalid && email.touched"
-                  >Enter your email address.</small
-                >
-              </div>
-            </div>
-            <br /> -->
-
-            <!-- contact number-->
             <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
@@ -270,18 +248,6 @@
               </div>
             </div>
             <br />
-
-            <!-- <div class="col-md-12">
-              <button
-                type="button"
-                class="btn btn-outline-info"
-                onclick="verifyContactNumber()"
-                style="width: 500px"
-              >
-                Verify your Contact Number
-              </button>
-            </div>
-            <br /><br /> -->
 
             <div class="row">
               <div class="col-md-6 mb-4">
@@ -353,6 +319,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
                   <label class="form-label" for="BMI">BMI</label>
@@ -384,7 +351,6 @@
                 class="form-control"
                 name="specialConditions"
                 ngModel
-                required
                 #specialConditions="ngModel"
               />
             </div>
@@ -395,32 +361,29 @@
                 <div class="form-outline">
                  
                   <input type="file" id="imageUpload" name="imageUpload"  class="form-control" (change)="onFileChange($event)"/>
-                  <label class="form-label" for="imageUpload">Upload your photo</label>
-                </div>
-                </div>
-          
-              
-             
 
-              <!-- Submit button -->
-              
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <!-- Previous button -->
-                    <button class="btn btn-secondary" >Previous</button>
+      
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <button class="btn btn-secondary" (click)="navigateToHome()">Previous</button>
                   </div>
-                  <div class="col-md-4 text-center">
-                    <!-- Display current page number -->
-                  
-                  </div>
-                  <div class="col-md-4 text-right">
-                    <!-- Next button -->
-                    <input type="submit" value="Next" class="btn btn-primary"  style="width: 250px;" [disabled]="!donorRegistrationForm.valid">
-                    <!--routerLink="../donor-registration2" -->
-                  </div>
+                </div>
+
+                </div>
+                <div class="col-md-4 text-center">
+                </div>
+                <div class="col-md-4 text-right">
+                  <input
+                    type="submit"
+                    value="Next"
+                    class="btn btn-primary"
+                    style="width: 250px"
+                    [disabled]="!donorRegistrationForm.valid"
+                  />
                 </div>
               </div>
+            </div>
           </form>
         </div>
       </div>

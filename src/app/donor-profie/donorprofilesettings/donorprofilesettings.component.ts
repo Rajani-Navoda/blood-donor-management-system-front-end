@@ -60,7 +60,6 @@ export class DonorprofilesettingsComponent implements OnInit{
     updateDonorDetails(updateDonorForm: NgForm) {
 
         var formData = updateDonorForm.value;
-        console.log(formData);
 
         this.donorService.updateDonor(formData).subscribe(
             (response: any)=>{
@@ -68,7 +67,7 @@ export class DonorprofilesettingsComponent implements OnInit{
                 this.alertService.alertWithSuccess("Details updated successfully!");
             },
             (error)=>{
-                this.alertService.alertWithError();
+                this.alertService.alertWithError("Something Went Wrong!");
             }
         );
 

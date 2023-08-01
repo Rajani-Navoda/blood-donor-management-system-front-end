@@ -12,12 +12,11 @@ export class AlertService {
     Swal.fire("Success", message, "success");
   }
 
-  public alertWithError() {
+  public alertWithError(message: string) {
     Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Something went wrong!',
-        // footer: '<a href="">Why do I have this issue?</a>'
+        text: message,
       })
       
 
