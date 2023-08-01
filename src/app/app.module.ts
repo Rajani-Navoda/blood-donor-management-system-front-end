@@ -125,9 +125,7 @@ import { BloodBankListComponent } from './blood-bank-list/blood-bank-list.compon
         GoogleMapsModule,
         HttpClientModule,
         FormsModule,                             
-        ReactiveFormsModule ,
-        ChartModule
-
+        ReactiveFormsModule
     ],
     providers: [
     ],
