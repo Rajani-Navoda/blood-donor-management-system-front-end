@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { HerosectionComponent } from './home/herosection/herosection.component';
@@ -57,7 +56,7 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BloodBankListComponent } from './blood-bank-list/blood-bank-list.component';
 
 

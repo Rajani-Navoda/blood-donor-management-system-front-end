@@ -1,342 +1,377 @@
 <section class="text-center">
-  <div
-    class="p-5 bg-image"
-    style="
-      background-image: url('../assets/images/front-view-woman-holding-paper-heart-with-heartbeat.jpg');
-      height: 300px;
-      width: auto;
-      background-repeat: no-repeat;
-      background-size: cover;
-    "
-  ></div>
-
-  <div
-    class="card mx-4 mx-md-5 shadow-5-strong"
-    style="
-      margin-top: -100px;
-      background: hsla(0, 0%, 100%, 0.8);
-      backdrop-filter: blur(30px);
-    "
-  >
-    <div class="card-body py-5 px-md-5">
-      <div class="row d-flex justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="fw-bold mb-5">Donor Registration Form</h2>
-          <h4 class="fw-bold mb-5">Personal Information</h4>
-
-          <form
-            (ngSubmit)="donorRegistration(donorRegistrationForm)"
-            #donorRegistrationForm="ngForm"
-          >
-            <div class="form-outline">
-              <label class="form-label" for="fullName"
-                >Full name (According to the NIC)</label
-              >
-              <input
-                type="text"
-                id="fullName"
-                class="form-control"
-                name="fullName"
-                ngModel
-                required
-                #fullName="ngModel"
-              />
-              <div>
-                <small *ngIf="fullName.invalid && fullName.touched"
-                  >Enter your full name.</small
+    <div
+      class="p-5 bg-image"
+      style="
+        background-image: url('../assets/images/front-view-woman-holding-paper-heart-with-heartbeat.jpg');
+        height: 300px;
+        width: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    ></div>
+  
+    <div
+      class="card mx-4 mx-md-5 shadow-5-strong"
+      style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+      "
+    >
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Donor Registration Form</h2>
+            <h4 class="fw-bold mb-5">Personal Information</h4>
+  
+            <form
+              (ngSubmit)="donorRegistration(donorRegistrationForm)"
+              #donorRegistrationForm="ngForm"
+            >
+              <div class="form-outline">
+                <label class="form-label" for="fullName"
+                  >Full name (According to the NIC)</label
                 >
-              </div>
-            </div>
-            <br />
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="nicNumber">NIC number</label>
-                  <input
-                    type="text"
-                    id="nicNumber"
-                    class="form-control"
-                    name="nic"
-                    ngModel
-                    required
-                    #nic="ngModel"
-                  />
-
-                  <div>
-                    <small *ngIf="nic.invalid && nic.touched"
-                      >NIC number is required.</small
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="dateOfBirth"
-                    >Date of birth</label
-                  >
-                  <input
-                    type="date"
-                    id="dateOfBirth"
-                    class="form-control"
-                    name="dob"
-                    ngModel
-                    required
-                    #dob="ngModel"
-                  />
-                  <div>
-                    <small *ngIf="dob.invalid && dob.touched"
-                      >choose your birthday</small
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Gender -->
-            <div class="col-md-6">
-              <label class="form-label">Gender : </label>
-              <div class="form-check form-check-inline mb-4">
                 <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="maleRadio"
-                  value="Male"
-                  name="gender"
+                  type="text"
+                  id="fullName"
+                  class="form-control"
+                  name="fullName"
                   ngModel
                   required
-                  #gender="ngModel"
+                  #fullName="ngModel"
                 />
-                <label class="form-check-label" for="maleRadio">Male</label>
+                <div>
+                  <small *ngIf="fullName.invalid && fullName.touched"
+                    >Enter your full name.</small
+                  >
+                </div>
               </div>
-
-              <div class="form-check form-check-inline mb-4">
+              <br />
+  
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="nicNumber">NIC number</label>
+                    <input
+                      type="text"
+                      id="nicNumber"
+                      class="form-control"
+                      name="nic"
+                      ngModel
+                      required
+                      #nic="ngModel"
+                    />
+  
+                    <div>
+                      <small *ngIf="nic.invalid && nic.touched"
+                        >NIC number is required.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="dateOfBirth"
+                      >Date of birth</label
+                    >
+                    <input
+                      type="date"
+                      id="dateOfBirth"
+                      class="form-control"
+                      name="dob"
+                      ngModel
+                      required
+                      #dob="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="dob.invalid && dob.touched"
+                        >choose your birthday</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Gender -->
+              <div class="col-md-6">
+                <label class="form-label">Gender : </label>
+                <div class="form-check form-check-inline mb-4">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="maleRadio"
+                    value="Male"
+                    name="gender"
+                    ngModel
+                    required
+                    #gender="ngModel"
+                  />
+                  <label class="form-check-label" for="maleRadio">Male</label>
+                </div>
+  
+                <div class="form-check form-check-inline mb-4">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="femaleRadio"
+                    value="Female"
+                    name="gender"
+                    ngModel
+                    required
+                    #gender="ngModel"
+                  />
+                  <label class="form-check-label" for="femaleRadio">Female</label>
+                </div>
+  
+                <div class="form-check form-check-inline mb-4">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="unknownRadio"
+                    value="Unknown"
+                    name="gender"
+                    ngModel
+                    required
+                    #gender="ngModel"
+                  />
+                  <label class="form-check-label" for="unknownRadio"
+                    >Unknown</label
+                  >
+                </div>
+              </div>
+              <br />
+  
+              <!-- Address -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="address">Address</label>
                 <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="femaleRadio"
-                  value="Female"
-                  name="gender"
+                  type="text"
+                  id="address"
+                  class="form-control"
+                  name="address"
                   ngModel
                   required
-                  #gender="ngModel"
+                  #address="ngModel"
                 />
-                <label class="form-check-label" for="femaleRadio">Female</label>
+                <div>
+                  <small *ngIf="address.invalid && address.touched"
+                    >Enter your address.</small
+                  >
+                </div>
               </div>
-
-              <div class="form-check form-check-inline mb-4">
+              <br />
+  
+              <!-- City and zip -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="city">City</label>
+                    <input
+                      type="text"
+                      id="city"
+                      class="form-control"
+                      name="city"
+                      ngModel
+                      required
+                      #city="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="city.invalid && city.touched"
+                        >Enter your nearest city.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="postalCode">Postal code</label>
+                    <input
+                      type="text"
+                      id="postalCode"
+                      class="form-control"
+                      name="postalCode"
+                      ngModel
+                      required
+                      #postalCode="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="postalCode.invalid && postalCode.touched"
+                        >Check the postalcode in your address.<a
+                          href="https://nation.lk/postalcode/"
+                          target="_blank"
+                          >Find your postal code.(Click here!)</a
+                        ></small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="city"
+                      >Contact no: Mobile</label
+                    >
+                    <input
+                      type="tel"
+                      id="city"
+                      class="form-control"
+                      name="contactMobile"
+                      ngModel
+                      required
+                      #contactMobile="ngModel"
+                    />
+                    <div>
+                      <small
+                        *ngIf="contactMobile.invalid && contactMobile.touched"
+                        >contact number is required.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="zip">Contact no: Home</label>
+                    <input
+                      type="tel"
+                      id="zip"
+                      class="form-control"
+                      name="contactHome"
+                      ngModel
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+  
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="height">Height</label>
+                    <input
+                      type="number"
+                      id="height"
+                      class="form-control"
+                      name="height"
+                      ngModel
+                      required
+                      #height="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="height.invalid && height.touched"
+                        >Enter your height.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="weight">Weight</label>
+                    <input
+                      type="number"
+                      id="weight"
+                      class="form-control"
+                      name="weight"
+                      ngModel
+                      required
+                      #weight="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="weight.invalid && weight.touched"
+                        >Enter your weight.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="bloodGroup">Blood Group</label>
+                    <select
+                      name="bloodGroup"
+                      id="bloodGroup"
+                      class="form-control"
+                      ngModel
+                      required
+                      #bloodGroup="ngModel"
+                    >
+                      <option value="">Select User Blood Group</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
+                    <div>
+                      <small *ngIf="bloodGroup.invalid && bloodGroup.touched"
+                        >Enter your Blood Group</small
+                      >
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="BMI">BMI</label>
+                    <input
+                      type="number"
+                      id="BMI"
+                      class="form-control"
+                      name="bmi"
+                      ngModel
+                      required
+                      #bmi="ngModel"
+                    />
+                    <div>
+                      <small *ngIf="bmi.invalid && bmi.touched"
+                        >Enter your BMI value.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-outline mb-4">
+                <label class="form-label" for="specialConditions"
+                  >Special Conditions</label
+                >
                 <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="unknownRadio"
-                  value="Unknown"
-                  name="gender"
+                  type="text"
+                  id="specialConditions"
+                  class="form-control"
+                  name="specialConditions"
                   ngModel
-                  required
-                  #gender="ngModel"
+                  #specialConditions="ngModel"
                 />
-                <label class="form-check-label" for="unknownRadio"
-                  >Unknown</label
-                >
               </div>
-            </div>
-            <br />
-
-            <!-- Address -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="address">Address</label>
-              <input
-                type="text"
-                id="address"
-                class="form-control"
-                name="address"
-                ngModel
-                required
-                #address="ngModel"
-              />
-              <div>
-                <small *ngIf="address.invalid && address.touched"
-                  >Enter your address.</small
-                >
-              </div>
-            </div>
-            <br />
-
-            <!-- City and zip -->
-            <div class="row">
+              <br />
+  
+              <!--Upload the photo-->
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <label class="form-label" for="city">City</label>
                   <input
-                    type="text"
-                    id="city"
+                    type="file"
+                    id="imageUrl"
+                    name="imageUrl"
+                    accept="*.png.jpg"
                     class="form-control"
-                    name="city"
                     ngModel
                     required
-                    #city="ngModel"
+                    #imageUrl="ngModel"
                   />
-                  <div>
-                    <small *ngIf="city.invalid && city.touched"
-                      >Enter your nearest city.</small
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="postalCode">Postal code</label>
-                  <input
-                    type="text"
-                    id="postalCode"
-                    class="form-control"
-                    name="postalCode"
-                    ngModel
-                    required
-                    #postalCode="ngModel"
-                  />
-                  <div>
-                    <small *ngIf="postalCode.invalid && postalCode.touched"
-                      >Check the postalcode in your address.<a
-                        href="https://nation.lk/postalcode/"
-                        target="_blank"
-                        >Find your postal code.(Click here!)</a
-                      ></small
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="city"
-                    >Contact no: Mobile</label
+                  <label class="form-label" for="imageUrl"
+                    >Upload your photo</label
                   >
-                  <input
-                    type="tel"
-                    id="city"
-                    class="form-control"
-                    name="contactMobile"
-                    ngModel
-                    required
-                    #contactMobile="ngModel"
-                  />
-                  <div>
-                    <small
-                      *ngIf="contactMobile.invalid && contactMobile.touched"
-                      >contact number is required.</small
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="zip">Contact no: Home</label>
-                  <input
-                    type="tel"
-                    id="zip"
-                    class="form-control"
-                    name="contactHome"
-                    ngModel
-                  />
-                </div>
-              </div>
-            </div>
-            <br />
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="height">Height</label>
-                  <input
-                    type="number"
-                    id="height"
-                    class="form-control"
-                    name="height"
-                    ngModel
-                    required
-                    #height="ngModel"
-                  />
-                  <div>
-                    <small *ngIf="height.invalid && height.touched"
-                      >Enter your height.</small
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="weight">Weight</label>
-                  <input
-                    type="number"
-                    id="weight"
-                    class="form-control"
-                    name="weight"
-                    ngModel
-                    required
-                    #weight="ngModel"
-                  />
-                  <div>
-                    <small *ngIf="weight.invalid && weight.touched"
-                      >Enter your weight.</small
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="bloodGroup">Blood Group</label>
-                  <select
-                    name="bloodGroup"
-                    id="bloodGroup"
-                    class="form-control"
-                    ngModel
-                    required
-                    #bloodGroup="ngModel"
-                  >
-                    <option value="">Select User Blood Group</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                  </select>
-                  <div>
-                    <small *ngIf="bloodGroup.invalid && bloodGroup.touched"
-                      >Enter your Blood Group</small
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="BMI">BMI</label>
-                  <input
-                    type="number"
-                    id="BMI"
-                    class="form-control"
-                    name="bmi"
-                    ngModel
-                    required
-                    #bmi="ngModel"
-                  />
-                  <div>
-                    <small *ngIf="bmi.invalid && bmi.touched"
-                      >Enter your BMI value.</small
-                    >
-                  </div>
                 </div>
               </div>
             </div>
@@ -373,34 +408,30 @@
                   >Upload your photo</label
                 >
               </div>
-            </div>
-
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <button class="btn btn-secondary" (click)="navigateToHome()">Previous</button>
-
+            </div>  
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-secondary" (click)="navigateToHome()">
+                      Previous
+                    </button>
+                    <div class="col-md-4 text-center"></div>
+                    <div class="col-md-4 text-right">
+                      <input
+                        type="submit"
+                        value="Next"
+                        class="btn btn-primary"
+                        style="width: 250px"
+                        [disabled]="!donorRegistrationForm.valid"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                </div>
-                <div class="col-md-4 text-center">
-                </div>
-                <div class="col-md-4 text-right">
-                  <input
-                    type="submit"
-                    value="Next"
-                    class="btn btn-primary"
-                    style="width: 250px"
-                    [disabled]="!donorRegistrationForm.valid"
-                  />
-                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Section: Design Block -->
+  </section>
+  <!-- Section: Design Block -->
