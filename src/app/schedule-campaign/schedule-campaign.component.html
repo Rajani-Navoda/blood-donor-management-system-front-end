@@ -22,30 +22,48 @@
           <h2 class="fw-bold mb-5">Campaign-Request form</h2>
          
           
-          <form  (ngSubmit)="onSubmit(Requestcampaign)" #Requestcampaign="ngForm">
+          <form  (ngSubmit)="campaignRegistration(requestCampaignForm)" #requestCampaignForm="ngForm">
            
-            <div class="section-title">
-              
-              <div class="input-group" style="width: 75%;" >
-               
-                <input type="search" class="form-control rounded" placeholder="Nearest Bloodbank" aria-label="Search" aria-describedby="search-addon" name="nearestbloodbank" ngModel required   #nearestbloodbank="ngModel"/>
-                <button type="button" class="btn btn-outline-primary">Choose blood bank</button> 
-                
-              </div>
-              
-            </div>
+            <div class="row">
+                <div class="mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="bloodBank"
+                      >Blood Bank</label
+                    >
+                    <select
+                      name="bloodBank"
+                      id="bloodBank"
+                      class="form-control"
+                      ngModel
+                      required
+                      #bloodBank="ngModel"
+                    >
+                      <option value="">Select the Nearest Blood Bank</option>
+                      <option *ngFor="let bank of bloodBanks" [ngValue]="bank">
+                        {{ bank["user"]["firstName"] }}
+                      </option>
+                    </select>
+  
+                    <div>
+                      <small *ngIf="bloodBank.invalid && bloodBank.touched"
+                        >Enter the Blood Bank</small
+                      >
+                    </div>
+                  </div>
+                </div>
+            </div>    
 
             <!-- Full name -->
-            <div class="form-outline"><br><br>
+            <!-- <div class="form-outline"><br><br>
               <label class="form-label" for="fullName">Organizer Name</label>
               <input type="text" id="organizerName" class="form-control" name="organizerName" ngModel required #organizerName="ngModel"/>
               <div>
                 <small *ngIf="organizerName.invalid && organizerName.touched">Organizer name is required</small>
               </div>
               
-            </div>
+            </div> -->
 
-            <div class="form-outline"><br><br>
+            <!-- <div class="form-outline"><br><br>
               <label class="form-label" for="organizerID">Organizer ID</label>
               <input type="text" id="organizerID" class="form-control" name="organizerID" ngModel required #organizerID="ngModel"/>
               
@@ -54,9 +72,9 @@
               </div>    
 
             </div>
-            <br>
+            <br> -->
 
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
                   <label class="form-label" for="city">Contact no: </label>
@@ -67,14 +85,15 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="form-outline mb-4">
+            </div> -->
+
+            <!-- <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
               <input type="email" id="email" class="form-control" name="email" ngModel required email #email="ngModel"/>
               <div>
                 <small *ngIf="email.invalid && email.touched">email is required or invalid email.</small>
               </div>
-            </div>
+            </div> -->
 
    
             <div class="row">
@@ -87,17 +106,26 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                    <label class="form-label" for="location">Location(Venue)</label>
+                    <input type="text" id="location" class="form-control" name="location" ngModel required #location="ngModel"  />
+                    <div>
+                      <small *ngIf="location.invalid && location.touched">campain location/(Venue) is required.</small>
+                    </div>
+                </div>
+              </div>
               
             </div>
 
-            <div class="row">
-              
+            <div class="row"> 
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <label class="form-label" for="city">Time (Start)</label>
-                  <input type="time" id="starttime" class="form-control" name="Starttime" ngModel required #starttime="ngModel" />
+                  <label class="form-label" for="startTime">Start Time</label>
+                  <input type="time" id="startTime" class="form-control" name="startTime" ngModel required #startTime="ngModel" />
                   <div>
-                    <small *ngIf="starttime.invalid && starttime.touched">Enter the desired time to start the campaign.</small>
+                    <small *ngIf="startTime.invalid && startTime.touched">Enter the desired time to start the campaign.</small>
                   </div>
                 </div>
               </div>
@@ -105,26 +133,18 @@
 
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <label class="form-label" for="zip">Time (end)</label>
-                  <input type="time" id="endtime" class="form-control" name="endtime" ngModel required #endtime="ngModel" />
+                  <label class="form-label" for="endTime">End Time</label>
+                  <input type="time" id="endTime" class="form-control" name="endTime" ngModel required #endTime="ngModel" />
                  
                   <div>
-                    <small *ngIf="endtime.invalid && endtime.touched">Enter the end time of the campaign.</small>
+                    <small *ngIf="endTime.invalid && endTime.touched">Enter the end time of the campaign.</small>
                   </div>
                 </div>
               </div>
              
             </div>
 
-            <div class="form-outline mb-4">
-              <label class="form-label" for="email">Campaign Location(Venue)</label>
-              <input type="text" id="location" class="form-control" name="location" ngModel required #location="ngModel"  />
-              <div>
-                <small *ngIf="location.invalid && location.touched">campain location/(Venue) is required.</small>
-              </div>
-            </div>
-
-            <div class="form-outline mb-4">
+            <!-- <div class="form-outline mb-4">
               <label class="form-label" for="email">Location URL</label>
               <input type="text" id="locationURL" class="form-control" name="locationURL" ngModel required #locationURL="ngModel"  />
               <div>
@@ -140,7 +160,7 @@
                 <small *ngIf="organizedby.invalid && organizedby.touched">Did you organize the campaign as an individual or a organization? If you are a oganization enter the organization name.</small>
               </div>
 
-            </div>
+            </div> -->
 
             <div class="form-outline mb-4">
               <label class="form-label" for="purpose">Purpose</label>
@@ -163,7 +183,7 @@
                 <div class="col-md-4 text-right">
                   <br>
                   <!-- Next button -->
-                  <input type="submit" class="btn btn-danger"  style="width: 250px;"  value="Submit"  [disabled]="!Requestcampaign.valid">
+                  <input type="submit" class="btn btn-danger"  style="width: 250px;"  value="Submit"  [disabled]="!requestCampaignForm.valid">
                 </div>
               </div>
             </div>

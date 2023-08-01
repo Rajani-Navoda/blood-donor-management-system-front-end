@@ -20,7 +20,6 @@ export class UserService {
     }
 
     public login(data: any) {
-        this.userAuthService.clear();
         return this.httpClient.post(this.url + "/authenticate", data, {headers: this.requestHeader});
     }
 

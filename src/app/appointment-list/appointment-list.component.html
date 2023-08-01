@@ -1,116 +1,78 @@
 <app-organizerprofile-header></app-organizerprofile-header>
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <title>Tables / Data - NiceAdmin Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 </head>
 
 <body>
-
   <main id="main" class="main">
-
     <div class="pagetitle">
-      <h1>Data Tables</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a>Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">Data</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+      <h1>Appointment List</h1>
+      <br />
+    </div>
+    <!-- End Page Title -->
 
-    <section class="section">
+    <section class="section" *ngFor="let campDonor of campaigns">
+      <br />
       <div class="row">
         <div class="col-lg-12">
-    
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Appointment list</h5>
-              <p>Campaign ID: <span id="campaignId"></span></p>
-              <p>Campaign date: <span id="campaignDate"></span></p>
-              <p>Time: <span id="campaignTime"></span></p>
-              <p>Location: <span id="campaignLocation"></span></p>
-    
-              <!-- Table with stripped rows -->
+              <p>
+                <strong>Blood Bank: </strong
+                >{{ campDonor["campaign"]["bloodBank"]["user"]["firstName"] }}
+              </p>
+              <p><strong>Date: </strong>{{ campDonor["campaign"]["date"] }}</p>
+              <p>
+                <strong>Start Time: </strong
+                >{{ campDonor["campaign"]["startTime"] }}
+              </p>
+              <p>
+                <strong>End Time: </strong
+                >{{ campDonor["campaign"]["endTime"] }}
+              </p>
+              <p>
+                <strong>Location: </strong
+                >{{ campDonor["campaign"]["location"] }}
+              </p>
+
               <table class="table datatable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Donor ID</th>
+                    <th scope="col">Registration Number</th>
                     <th scope="col">Full name</th>
                     <th scope="col">Blood group</th>
-                    <th scope="col">Age</th>
+                    <th scope="col">Date of Birth</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Email address</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Weight</th>
                     <th scope="col">Contact number</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
-                    <td>Male</td>
-                    <td>brandon@example.com</td>
-                    <td>1234567890</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                    <td>Female</td>
-                    <td>bridie@example.com</td>
-                    <td>9876543210</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                    <td>Female</td>
-                    <td>ashleigh@example.com</td>
-                    <td>5678901234</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                    <td>Male</td>
-                    <td>angus@example.com</td>
-                    <td>9087654321</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                    <td>Male</td>
-                    <td>raheem@example.com</td>
-                    <td>2345678901</td>
+                  <tr *ngFor="let donor of campDonor['donors']; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ donor["registrationNumber"] }}</td>
+                    <td>{{ donor["fullName"] }}</td>
+                    <td>{{ donor["bloodGroup"] }}</td>
+                    <td>{{ donor["dob"] }}</td>
+                    <td>{{ donor["gender"] }}</td>
+                    <td>{{ donor["height"] }}</td>
+                    <td>{{ donor["weight"] }}</td>
+                    <td>{{ donor["contactMobile"] }}</td>
                   </tr>
                 </tbody>
               </table>
-              <!-- End Table with stripped rows -->
-    
             </div>
           </div>
-    
         </div>
       </div>
     </section>
-    
-  </main><!-- End #main -->
+  </main>
+</body>

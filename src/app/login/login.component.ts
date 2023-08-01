@@ -28,20 +28,26 @@ export class LoginComponent implements OnInit {
 
                 if (userType === 'donor') {
                     if (isFirstLogin === true) {
-                        this.router.navigate(['/donor-registration']);
+                        this.router.navigate(['/donor-registration']).then(() => {
+                            window.location.reload()});
                     } else {
-                        this.router.navigate(['/donor-profile-home']);
+                        this.router.navigate(['/donor-profile-home']).then(() => {
+                            window.location.reload()});;
                     }
                 } else if (userType === 'organizer') {
                     if (isFirstLogin === true) {
-                        this.router.navigate(['/organizer-registration']);
+                        this.router.navigate(['/organizer-registration']).then(() => {
+                            window.location.reload()});;
                     } else {
-                        this.router.navigate(['/organizer-profile-home']);
+                        this.router.navigate(['/organizer-profile-home']).then(() => {
+                            window.location.reload()});;
                     }
                 } else if (userType === 'admin') {
-                    this.router.navigate(['/admin-home']);
+                    this.router.navigate(['/admin-home']).then(() => {
+                        window.location.reload()});;
                 } else if (userType === 'blood-bank') {
-                    this.router.navigate(['/bloodbank-home']);
+                    this.router.navigate(['/bloodbank-home']).then(() => {
+                        window.location.reload()});;
                 }
             },
 

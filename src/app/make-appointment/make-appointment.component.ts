@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./make-appointment.component.css']
 })
 export class MakeAppointmentComponent {
+    
 
   onSubmit(form: NgForm){
     console.log(form);

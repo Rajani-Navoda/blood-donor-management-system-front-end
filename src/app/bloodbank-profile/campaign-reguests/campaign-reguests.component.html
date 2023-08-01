@@ -1,50 +1,82 @@
 <app-bloodbankprofile-header></app-bloodbankprofile-header>
 
 <main id="main" class="main">
-
   <div class="pagetitle">
     <h1>Campaign requests forms</h1>
-  </div><!-- End Page Title -->
+  </div>
 
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
-
-        <div class="card">
-          <div class="card-body">
-            <div *ngIf="campaignDetails">
-              <section class="section" *ngFor="let campaignDetail of campaignDetails">
+        <div *ngIf="campaignRequestsPresent; else noDataMsg">
+          <div class="card">
+            <div class="card-body">
+              <section class="section" *ngFor="let campaign of campaigns">
                 <div class="row">
                   <div class="col-lg-12">
-
                     <div class="card">
                       <div class="card-body">
+                        <h5 class="card-title">Blood Donation Campaign</h5>
+                        <br />
 
-                        <h5 class="card-title">Blood Donation Campaign</h5><br>
-
-                        <p><strong>Location address:</strong>{{ campaignDetail.location_address }}</p>
-                        <p><strong>Date:</strong>{{ campaignDetail.date }}</p>
-                        <p><strong>Time:</strong> {{ campaignDetail.start_time }} - {{ campaignDetail.end_time }}</p>
-                        <p><strong>Email:</strong> {{ campaignDetail.email }}</p>
-                        <p><strong>Contact Number:</strong>{{ campaignDetail.contact_num }}</p>
-                        <p><strong>Organizer Name:</strong> {{ campaignDetail.organizer_name }}</p>
-                        <p><strong>Location URL:</strong> {{ campaignDetail.location_URL }}</p>
-                        <p><strong>Purpose:</strong> {{ campaignDetail.purpose }}</p>
-
-                        <button type="button" class="btn btn-success">Accept the request.</button>
+                        <p>
+                          <strong>Organizer Name: </strong>
+                          {{ campaign["organizer"]["fullName"] }}
+                        </p>
+                        <p>
+                          <strong>Email Address: </strong>
+                          {{ campaign["organizer"]["user"]["email"] }}
+                        </p>
+                        <p>
+                          <strong>Organizer NIC Number: </strong>
+                          {{ campaign["organizer"]["nic"] }}
+                        </p>
+                        <p>
+                          <strong>Contact Mobile Number: </strong>
+                          {{ campaign["organizer"]["contactMobile"] }}
+                        </p>
+                        <p>
+                          <strong>Contact Land Number: </strong>
+                          {{ campaign["organizer"]["contactHome"] }}
+                        </p>
+                        <p><strong>Date: </strong> {{ campaign["date"] }}</p>
+                        <p>
+                          <strong>Start Time: </strong>
+                          {{ campaign["startTime"] }} H
+                        </p>
+                        <p>
+                          <strong>End Time: </strong>
+                          {{ campaign["endTime"] }} H
+                        </p>
+                        <p>
+                          <strong>Location: </strong> {{ campaign["location"] }}
+                        </p>
+                        <p>
+                          <strong>Purpose: </strong> {{ campaign["purpose"] }}
+                        </p>
+                        <button
+                          type="button"
+                          (click)="approveRequest(campaign['campaignId'])"
+                          class="btn btn-success"
+                        >
+                          Accept the request.
+                        </button>
                       </div>
                     </div>
-
                   </div>
                 </div>
-                <br>
+                <br />
               </section>
             </div>
           </div>
         </div>
 
+        <ng-template #noDataMsg>
+          <div class="no-data-card">
+            <div class="no-data-message">No Data Available</div>
+          </div>
+        </ng-template>
       </div>
     </div>
   </section>
-
-</main><!-- End #main -->
+</main>

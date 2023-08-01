@@ -64,6 +64,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OrganizerRegistrationComponent } from './organizer-registration/organizer-registration.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BloodBankListComponent } from './blood-bank-list/blood-bank-list.component';
 
 import { ReportsComponent } from './reports/reports.component';
 import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bbank.component';
@@ -123,11 +124,7 @@ import { DeleteBloodBBankComponent } from './delete-blood-bbank/delete-blood-bba
         AdminHomeComponent,
         OrganizerRegistrationComponent,
         CreateBloodBankComponent,
-
-        ReportsComponent,
-        DeleteBloodBBankComponent
-        
- 
+        BloodBankListComponent
     ],
     
     imports: [

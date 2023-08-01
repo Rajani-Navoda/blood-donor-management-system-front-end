@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DonorService } from 'src/app/_services/donor.service';
 import { UserAuthService } from 'src/app/_services/user-auth.service';
 import { NgForm } from '@angular/forms';
-import { UserService } from 'src/app/_services/user.service';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/_services/alert.service';
 

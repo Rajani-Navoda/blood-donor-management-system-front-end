@@ -23,7 +23,6 @@ export class OrganizerRegistrationComponent implements OnInit {
         this.bloodBankService.getAllBloodBanks().subscribe(
             (response: any) => {
                 this.bloodBanks = response ? response : [];
-                console.log(this.bloodBanks);
             }
         )
     }
